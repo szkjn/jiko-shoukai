@@ -1,6 +1,5 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
-  import Filter from "../components/Filter.svelte";
   import ProjectDiv from "../components/ProjectDiv.svelte";
   import ProjectDetails from "../components/ProjectDetails.svelte";
   import { projects } from "../data/projects";
@@ -45,33 +44,54 @@
 </script>
 
 <div class="page-container">
-  <Header />
-  <Filter {categories} {selectedCategories} onFilter={handleFilter} />
-  <main class="flex flex-row w-full">
+  <Header
+    {categories}
+    {selectedCategories}
+    on:filter={(event) => handleFilter(event.detail)}
+  />
+  <main class="flex flex-row w-full justify-between">
     <div class="projects flex flex-col">
       {#each filteredProjects() as project}
         <ProjectDiv
           {project}
-          on:mouseenter={() => (hoveredProject = project)}
-          on:mouseleave={() => (hoveredProject = null)}
+          on:mouseenter={(event) => {
+            hoveredProject = project;
+          }}
+          on:mouseleave={(event) => {
+            hoveredProject = null;
+          }}
         />
       {/each}
     </div>
-    <div class="side-panel flex">
+    <div class="side-panel flex justify-center">
       <ProjectDetails project={hoveredProject} />
     </div>
+    <div class="left-panel">hello</div>
   </main>
 </div>
 
 <style>
   .page-container {
-    padding: 1rem;
-    max-width: 1280px;
+    padding: 0 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  main {
+    /* border: 2px solid red; */
   }
   .projects {
-    flex: 2;
+    flex: 1;
+    /* width: 780px; */
+    /* border: solid 2px red; */
   }
   .side-panel {
+    flex: 1;
+    position: sticky;
+    top: 60px;
+    left: 200px;
+    height: fit-content;
+  }
+  .left-panel {
     flex: 1;
   }
 </style>

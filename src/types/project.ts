@@ -1,12 +1,13 @@
+export type Category = "performance" | "installation" | "programming" | "talk" | "releases";
+
 export interface Project {
     title: string;
-    loc: string;
+    loc?: string;
     date: string;
     desc: string;
     tags: string[];
-    category: ('performance' | 'installation' | 'programming' | 'releases')[];
+    category: Category[];
     img: string[];
     links?: { label: string; url: string }[];
   }
   
-export type Category = "performance" | "installation" | "programming" | "releases";
