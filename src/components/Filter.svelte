@@ -12,15 +12,23 @@
   };
 </script>
 
-<div class="bg-gray-100 py-4 px-6 flex gap-2">
+<div class="py-4 flex gap-2">
   {#each categories as category}
     <button
       on:click={() => toggleCategory(category)}
-      class="px-3 py-1 border rounded-md {selectedCategories.includes(category)
-        ? 'bg-gray-800 text-white'
-        : 'bg-white'}"
+      class={`text-sm ${
+        selectedCategories.includes(category)
+          ? "bg-gray-800 text-white"
+          : "bg-white"
+      }`}
     >
       {category}
     </button>
   {/each}
 </div>
+
+<style>
+  button {
+    cursor: crosshair;
+  }
+</style>

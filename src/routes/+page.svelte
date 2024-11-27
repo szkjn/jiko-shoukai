@@ -2,9 +2,12 @@
   import Header from "../components/Header.svelte";
   import Filter from "../components/Filter.svelte";
   import ProjectDiv from "../components/ProjectDiv.svelte";
+  import ProjectDetails from "../components/ProjectDetails.svelte";
   import { projects } from "../data/projects";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
+
+  let hoveredProject: Project | null = null;
 
   let categories = Array.from(
     new Set(projects.flatMap((project) => project.category))
@@ -44,16 +47,31 @@
 <div class="page-container">
   <Header />
   <Filter {categories} {selectedCategories} onFilter={handleFilter} />
-  <main class="flex flex-col">
-    {#each filteredProjects() as project}
-      <ProjectDiv {project} />
-    {/each}
+  <main class="flex flex-row w-full">
+    <div class="projects flex flex-col">
+      {#each filteredProjects() as project}
+        <ProjectDiv
+          {project}
+          on:mouseenter={() => (hoveredProject = project)}
+          on:mouseleave={() => (hoveredProject = null)}
+        />
+      {/each}
+    </div>
+    <div class="side-panel flex">
+      <ProjectDetails project={hoveredProject} />
+    </div>
   </main>
 </div>
 
 <style>
   .page-container {
     padding: 1rem;
-    max-width: 500px;
+    max-width: 1280px;
+  }
+  .projects {
+    flex: 2;
+  }
+  .side-panel {
+    flex: 1;
   }
 </style>

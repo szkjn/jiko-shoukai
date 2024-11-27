@@ -27,8 +27,8 @@ export const projects: Project[] = [
         that we all face in our daily lives. Through this interactive element, the installation aims \
         to inspire a sense of agency and personal responsibility in the viewer.\
         \n\nPitcures by Sara Herrlander",
-    tags: ['performance', 'interactive'],
-    category: ['performance'],
+    tags: ['installation', 'interactive'],
+    category: ['installation'],
     img: ['i_used_to_02.jpg'],
     links: [{ label: 'Video', url: 'https://vimeo.com/423984479' }],
   },
@@ -54,7 +54,7 @@ export const projects: Project[] = [
         questions our relationship to the natural world and forces us to confront the way we often \
         take it for granted.",
     tags: ['installation', 'art'],
-    category: ['installation', 'programming'],
+    category: ['installation'],
     img: ['birds_chirping_01.jpg'],
     links: [{ label: 'Video', url: 'https://vimeo.com/424010991' }],
 
@@ -70,8 +70,18 @@ export const projects: Project[] = [
     to extract, sanitize, compute and output listeners data\
     and other metrics from AzuraCast API in order to monitor\
     traffic on both the website and the app.",
-    img: ['tr_01.jpg'],
+    img: ['lahmacun_01.png'],
     links: [{label: "Github", url: "https://github.com/lahmacunradio/analytics"}]
+},
+{
+    title: 'Hybrida Fest website',
+    loc: 'online',
+    category: ['programming'],
+    tags: ['programming', 'festival'],
+    date: '01.04.2024',
+    desc: "Hybrida Fest 2024 Official Website, made with Jimmy Pez.",
+    img: ['hybrida_web_01.png'],
+    links: [{label: "Website", url: "https://www.hybridafest.info/"}]
 },
 {
     title: 'transverszia podcast',

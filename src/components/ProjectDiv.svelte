@@ -5,7 +5,7 @@
   function handleMissingImage(event: Event) {
     const target = event.target as HTMLImageElement;
     console.warn(`Image not found: ${target.src}`);
-    target.style.display = "none"; // Hide the image if not found
+    target.style.display = "none";
   }
 </script>
 
@@ -14,7 +14,7 @@
     <img
       src={`/images/${image}`}
       alt=""
-      class="w-full h-full object-cover absolute inset-0 grayscale hover:colorful"
+      class="w-full object-cover grayscale hover:colorful"
       on:error={handleMissingImage}
     />
   {/each}
@@ -23,11 +23,9 @@
 <style>
   img {
     height: 10vh;
-    width: 100vw;
-    object-fit: cover;
     cursor: crosshair;
     transition:
-      height 1s ease,
+      height 0.3s ease,
       filter 0.3s ease;
   }
 
@@ -37,6 +35,6 @@
 
   .hover\:colorful:hover {
     filter: none;
-    height: 15vh;
+    height: 12vh;
   }
 </style>

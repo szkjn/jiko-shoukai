@@ -2,7 +2,6 @@
   export let title = "jun suzuki";
 </script>
 
-<header class="bg-gray-800 text-white">
-  <h1 class="text-2xl font-bold">{title}</h1>
+<header class="">
+  <h1 class="text-sm font-bold">{title}</h1>
 </header>
-
