@@ -1,7 +1,6 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
   import { projects } from "../data/projects";
-  import { onDestroy } from "svelte";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
 
@@ -134,11 +133,6 @@
     width: 45%;
     /* width: 780px; */
     /* border: solid 2px red; */
-  }
-  .category {
-    cursor: crosshair;
-    border-bottom: 1px solid white;
-    transition: 0.5s ease;
   }
 
   .category-btn {

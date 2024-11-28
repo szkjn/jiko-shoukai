@@ -201,7 +201,7 @@ export const projects: Project[] = [
 {
     title: 'i dream of a sphere without corners',
     loc: 'Signals2Noise, Silent Green, Berlin, Germany',
-    category: ['performances', 'programming'],
+    category: ['performances'],
     tags: ['performances', 'radio', 'programming', 'generative_art', 'audiovisual'],
     date: '04.10.2024',
     desc: "\n<i>Live performance using real-time short-term frequencies and AI-assisted audio sequencing.</i>\n\nI dream of a sphere without corners can manifest in various forms. It's a morphing interactive apparatus. A generative soundscape. A real-time collage of radio frequencies from around the globe. Fragmented testimonies of the uprooted. Sounds that evade borders. Border-THROUGH. CROSS-border. TRANS-. PAN-. INTER-. PERI-. An ode to motion. An ode to distance and its infinite range. To the in-betweens.\n\nUsing WebSDR (Software Defined Radio) as a primary source of sound, Jun Suzuki explores the structured disorder of broadcasts, white noise and machine bleeps from around the world. These ongoing streams are channeled into interactive agents (dicy2 by Ircam) that generate additional sequences from field recordings and testimonies. The result is a constantly evolving, real-time generated, fragmented soundscape that blurs cultural boundaries, and dreams of a sphere without corners.",
@@ -211,7 +211,7 @@ export const projects: Project[] = [
 {
     title: 'i dream of a sphere without corners',
     loc: 'Goethe Institut, Budapest, Hungary',
-    category: ['performances', 'programming'],
+    category: ['performances'],
     tags: ['performances', 'radio', 'programming', 'audiovisual'],
     date: '04.10.2024',
     desc: "\nLive performance using real-time short-term frequencies and AI-assisted audio sequencing.\n\nI dream of a sphere without corners can manifest in various forms. It's a morphing interactive apparatus. A generative soundscape. A real-time collage of radio frequencies from around the globe. Fragmented testimonies of the uprooted. Sounds that evade borders. Border-THROUGH. CROSS-border. TRANS-. PAN-. INTER-. PERI-. An ode to motion. An ode to distance and its infinite range. To the in-betweens.\n\nUsing WebSDR (Software Defined Radio) as a primary source of sound, Jun Suzuki explores the structured disorder of broadcasts, white noise and machine bleeps from around the world. These ongoing streams are channeled into interactive agents (dicy2 by Ircam) that generate additional sequences from field recordings and testimonies. The result is a constantly evolving, real-time generated, fragmented soundscape that blurs cultural boundaries, and dreams of a sphere without corners.",
