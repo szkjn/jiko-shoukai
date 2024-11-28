@@ -83,6 +83,7 @@
                         .replace(/\n\n/g, "<br /><br />")
                         .replace(/\n/g, "<br />")}
                       {#if project.links && project.links.length > 0}
+                        <br />
                         {#each project.links as link}
                           <br />
                           <a href={link.url} target="_blank">
@@ -111,7 +112,8 @@
 </div>
 
 <style>
-  button {
+  button,
+  a {
     cursor: crosshair;
     padding: 0;
     margin: 0;
@@ -155,7 +157,6 @@
   }
   .project-header {
     padding: 2px 0;
-    cursor: help;
   }
   .project-header:hover {
     text-decoration: underline;
@@ -176,6 +177,7 @@
     text-align: justify;
     font-family: "Libre Franklin", sans-serif;
     font-size: 0.7rem;
+    font-weight: 500;
   }
   a {
     text-align: justify;
@@ -183,10 +185,12 @@
     font-weight: 900;
     font-size: 0.8rem;
     text-decoration: underline;
-  }
-  a:hover {
     color: white;
     background: black;
+  }
+  a:hover {
+    color: black;
+    background: white;
   }
   .right-panel {
     /* flex: 1; */
