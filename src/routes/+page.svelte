@@ -1,97 +1,200 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
-  import ProjectDiv from "../components/ProjectDiv.svelte";
-  import ProjectDetails from "../components/ProjectDetails.svelte";
   import { projects } from "../data/projects";
+  import { onDestroy } from "svelte";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
 
-  let hoveredProject: Project | null = null;
+  let selectedCategory: Category | null = null;
+  let selectedProject: Project | null = null;
 
-  let categories = Array.from(
-    new Set(projects.flatMap((project) => project.category))
-  );
-  let selectedCategories: Category[] = [];
+  let categories: Category[] = [
+    "installations",
+    "performances",
+    "releases",
+    "talks",
+    "programming",
+  ];
 
-  // Helper function to parse date strings to Date objects
+  const handleCategorySelect = (category: Category) => {
+    // Toggle category selection
+    selectedCategory = selectedCategory === category ? null : category;
+    // Deselect project when category changes
+    if (selectedCategory !== category) {
+      selectedProject = null;
+    }
+  };
+
+  const handleProjectSelect = (project: Project) => {
+    selectedProject = selectedProject === project ? null : project;
+  };
+
+  const getProjectsByCategory = (category: Category) => {
+    return sortedProjects.filter((project) =>
+      project.category.includes(category)
+    );
+  };
+
   function parseDate(dateStr: string): Date {
     const [day, month, year] = dateStr.split(".").map(Number);
     return new Date(year, month - 1, day);
   }
 
-  // Sort projects by date in descending order (most recent first)
   const sortedProjects: Project[] = [...projects].sort((a, b) => {
     return parseDate(b.date).getTime() - parseDate(a.date).getTime();
   });
-
-  // Filter projects based on selected categories
-  const filteredProjects = () =>
-    selectedCategories.length === 0
-      ? sortedProjects
-      : sortedProjects.filter((project) =>
-          selectedCategories.some((category) =>
-            project.category.includes(category)
-          )
-        );
-
-  const handleFilter = (category: Category) => {
-    if (selectedCategories.includes(category)) {
-      selectedCategories = selectedCategories.filter((t) => t !== category);
-    } else {
-      selectedCategories = [...selectedCategories, category];
-    }
-  };
 </script>
 
 <div class="page-container">
-  <Header
-    {categories}
-    {selectedCategories}
-    on:filter={(event) => handleFilter(event.detail)}
-  />
+  <Header />
   <main class="flex flex-row w-full justify-between">
-    <div class="projects flex flex-col">
-      {#each filteredProjects() as project}
-        <ProjectDiv
-          {project}
-          on:mouseenter={(event) => {
-            hoveredProject = project;
-          }}
-          on:mouseleave={(event) => {
-            hoveredProject = null;
-          }}
-        />
+    <div class="left-panel">
+      <!-- Category list -->
+      {#each categories as category}
+        <div>
+          <button
+            class="category-btn"
+            on:click={() => handleCategorySelect(category)}
+          >
+            {category}
+          </button>
+          {#if selectedCategory === category}
+            <div class="project-list py-2">
+              {#each getProjectsByCategory(category) as project}
+                <div>
+                  <button
+                    class="project-header"
+                    on:click={() => handleProjectSelect(project)}
+                  >
+                    <div class="flex flex-row items-center">
+                      <p class="date pr-2">
+                        {project.date}
+                      </p>
+                      <h4>
+                        <span class="title">
+                          {project.title}
+                        </span>, {project.loc}
+                      </h4>
+                    </div>
+                  </button>
+                  {#if selectedProject === project}
+                    <p class="desc pb-4">
+                      {@html project.desc
+                        .replace(/\n\n/g, "<br /><br />")
+                        .replace(/\n/g, "<br />")}
+                      {#if project.links && project.links.length > 0}
+                        <br />
+                        {#each project.links as link}
+                          <br />
+                          <a href={link.url} target="_blank">
+                            ↗{link.label}
+                          </a>
+                        {/each}
+                      {/if}
+                    </p>
+                  {/if}
+                </div>
+              {/each}
+            </div>
+          {/if}
+        </div>
       {/each}
     </div>
-    <div class="side-panel flex justify-center">
-      <ProjectDetails project={hoveredProject} />
+
+    <div class="right-panel">
+      {#if selectedProject}
+        {#each selectedProject.img as image}
+          <img src="images/{image}" alt={selectedProject.title} />
+        {/each}
+      {/if}
     </div>
-    <div class="left-panel">hello</div>
   </main>
 </div>
 
 <style>
+  button,
+  a {
+    cursor: crosshair;
+    padding: 0;
+    margin: 0;
+    text-align: start;
+  }
+  h4 {
+    line-height: 0.9rem;
+    font-family: "Averia Serif Libre", serif;
+  }
+
   .page-container {
     padding: 0 1rem;
     max-width: 1600px;
     margin: 0 auto;
   }
-  main {
-    /* border: 2px solid red; */
-  }
-  .projects {
-    flex: 1;
+  .left-panel {
+    /* flex: 1; */
+    width: 45%;
     /* width: 780px; */
     /* border: solid 2px red; */
   }
-  .side-panel {
-    flex: 1;
-    position: sticky;
-    top: 60px;
-    left: 200px;
-    height: fit-content;
+  .category {
+    cursor: crosshair;
+    border-bottom: 1px solid white;
+    transition: 0.5s ease;
   }
-  .left-panel {
-    flex: 1;
+
+  .category-btn {
+    cursor: crosshair;
+    border-bottom: 1px solid white;
+    transition: 0.5s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 0.8rem;
+    user-select: none;
+    width: 100%;
+  }
+  .category-btn:hover {
+    border-bottom: 1px solid black;
+  }
+  .project-header {
+    padding: 2px 0;
+  }
+  .project-header:hover {
+    text-decoration: underline;
+  }
+
+  .date {
+    font-family: "Roboto Mono";
+    font-size: 0.8rem;
+  }
+  .title {
+    font-family: "Averia Serif Libre", serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-style: italic;
+    font-weight: 900;
+  }
+  .desc {
+    text-align: justify;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  a {
+    text-align: justify;
+    font-family: "Averia Serif Libre", serif;
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    color: white;
+    background: black;
+  }
+  a:hover {
+    color: black;
+    background: white;
+  }
+  .right-panel {
+    /* flex: 1; */
+    width: 40%;
+    /* border: 1px solid black; */
   }
 </style>

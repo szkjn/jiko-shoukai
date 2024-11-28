@@ -1,4 +1,4 @@
-export type Category = "performance" | "installation" | "programming" | "talk" | "releases";
+export type Category = "performances" | "installations" | "programming" | "talks" | "releases";
 
 export interface Project {
     title: string;

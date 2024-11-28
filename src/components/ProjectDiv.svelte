@@ -9,9 +9,10 @@
   }
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div class="container overflow-hidden">
   {#each project.img as image}
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <img
       src={`/images/${image}`}
       alt=""
@@ -19,13 +20,14 @@
       on:error={handleMissingImage}
       on:mouseenter
       on:mouseleave
+      on:click
     />
   {/each}
 </div>
 
 <style>
   img {
-    height: 22vh;
+    /* height: 22vh; */
     opacity: 0.9;
     cursor: crosshair;
     transition: height 3s ease;
