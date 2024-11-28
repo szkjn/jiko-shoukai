@@ -3,3 +3,29 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+a, button {
+    cursor: crosshair;
+}
+
+::selection {
+  background-color: rgb(109, 47, 255); /* The background color of the selected text */
+  color: #fff; /* The text color of the selected text */
+}
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;  /* Make scrollbar thin */
+  height: 8px; /* For horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bbb; /* Classy grey color */
+  border-radius: 10px;   /* Rounded corners for a modern look */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4; /* Light track background */
+  border-radius: 10px; /* Match thumb radius for coherence */
+}

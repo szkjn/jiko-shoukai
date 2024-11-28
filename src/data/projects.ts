@@ -88,6 +88,42 @@ export const projects: Project[] = [
     links: [{label: "Youtube", url: "https://www.youtube.com/watch?v=wlwUxV-8aAY"}]
 },
 {
+    title: 'Ch​ū​to Hanpa (Feat. Egregore) [Track]',
+    loc: 'Terenor Records, Berlin, Germany',
+    category: ['releases'],
+    tags: ['releases', 'music', 'collaboration', 'compilation'],
+    date: '08.08.2024',
+    desc: "\nTerenor Records presents Voix, a 14-tracks journey exploring the vast spectrum of vocal expressions. From experimental and ambient pieces to heart-felt songs, each artist of this compilation aimed at elevating vocal cords through digital transformation. There, the primal meets the processed as human and machine find their sonic point of contact.",
+    img: ['chuto_01.png'],
+    links: [
+        {label: "Bandcamp", url: "https://terenor-records.bandcamp.com/track/ch-to-hanpa"},
+    ]
+},
+{
+    title: 'CSO 480 400 [Track]',
+    loc: 'Exiles Electronics, Budapest, Hungary',
+    category: ['releases'],
+    tags: ['releases', 'music', 'compilation'],
+    date: '15.01.2020',
+    desc: "\nⓘ solidarity compilation for The City is For All (A Város Mindenkié)\n\nThe City is For All is a volunteer based grassroots organization operating in Budapest, in which homeless and non-homeless activists work together for housing rights and social justice. The organization operates as an informal advocacy group.",
+    img: ['antjemina_01.png'],
+    links: [
+        {label: "Bandcamp", url: "https://exiles-electronics.bandcamp.com/track/jun-suzuki-cso-384-400"},
+    ]
+},
+{
+    title: 'Antjemina [Track]',
+    loc: 'Terenor Records, Berlin, Germany',
+    category: ['releases'],
+    tags: ['releases', 'music', 'compilation'],
+    date: '11.11.2019',
+    desc: "\n\"We started Radiation events with the wish to experience unity and transcendence through music rituals. Inside of our cocoon we could admire the result through each and every participant over the last entrancing year.\n\nPropagation 2019 is a compilation of 10 tracks produced by artists who took part in these ceremonies. We are proud, via this sonic journey, to let the resulting energy radiate towards you.\" - Terenor Records",
+    img: ['antjemina_01.png'],
+    links: [
+        {label: "Bandcamp", url: "https://radiationmutation.bandcamp.com/track/jun-suzuki-antjemina"},
+    ]
+},
+{
     title: 'Interference',
     loc: 'AqTusheti, Georgia',
     category: ['programming', 'installations'],
@@ -100,12 +136,54 @@ export const projects: Project[] = [
 },
 {
     title: 'Fluids',
-    loc: 'Berlin',
+    loc: 'Bucht der Träumer, Frankfurt Oder, Germany',
     category: ['performances'],
     tags: ['performances', 'collaboration', 'dance'],
-    date: '01.01.2022',
+    date: '18.10.2023',
     desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
-    img: ['fluids_apal_4.png'],
+    img: ['fluids_bucht_01.png'],
+    links: [
+        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
+        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
+        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+    ]
+},
+{
+    title: 'Fluids',
+    loc: 'Tanz im August, Berlin, Germany',
+    category: ['performances'],
+    tags: ['performances', 'collaboration', 'dance'],
+    date: '26.10.2023',
+    desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
+    img: ['fluids_tia_01.png'],
+    links: [
+        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
+        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
+        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+    ]
+},
+{
+    title: 'Fluids',
+    loc: 'Hybrida Fest, Älvsbacka, Sweden',
+    category: ['performances'],
+    tags: ['performances', 'collaboration', 'dance'],
+    date: '07.07.2023',
+    desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
+    img: ['fluids_hybrida_01.png'],
+    links: [
+        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
+        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
+        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+    ]
+},
+{
+    title: 'Fluids',
+    loc: 'House of Beautiful Business, Sintra, Portugal',
+    category: ['performances'],
+    tags: ['performances', 'collaboration', 'dance'],
+    date: '06.06.2023',
+    desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
+    img: ['fluids_hobb_01.png'],
     links: [
         {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
         {label: "Video (full show)", url: "https://vimeo.com/774674061"},
@@ -219,8 +297,8 @@ export const projects: Project[] = [
     links: [{label: "Official website", url: "https://s2n.cashmereradio.com/programme/i-dream-of-a-sphere-without-corners"}]
 },
 {
-    title: 'The Interplay of Narrative and Technical Framework',
-    loc: 'The Node Institute, Alte Münze, Berlin Germany',
+    title: 'The Interplay of Narrative and Technique',
+    loc: 'The Node Institute, Berlin, Germany',
     category: ['talks'],
     tags: ['talks', 'generative_AI', 'collaboration'],
     date: '24.02.2024',
