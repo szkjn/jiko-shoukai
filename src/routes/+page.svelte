@@ -147,7 +147,7 @@
 
   .page-container {
     padding: 0 1rem;
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
   }
   .left-panel {
@@ -170,7 +170,7 @@
     font-family: "Libre Franklin", sans-serif;
     font-size: 0.8rem;
     user-select: none;
-    width: 50%;
+    width: 100%;
   }
   .project-list {
     width: 100%;
