@@ -266,6 +266,7 @@
   @media (max-width: 760px) {
     .project-details {
       flex-direction: column;
+      gap: 1rem;
     }
     .project-header > div,
     .desc,
