@@ -152,7 +152,7 @@
   }
   .left-panel {
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     transition: transform 0.3s ease;
   }
 
@@ -178,7 +178,7 @@
   .project-header {
     padding: 0;
     width: 100%;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     user-select: none;
   }
   .project-header > div,
@@ -194,7 +194,7 @@
 
   .image-container {
     width: 45%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     align-items: end;
   }
 
@@ -236,11 +236,11 @@
     justify-content: flex-end;
     user-select: none;
     width: 100%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
   }
 
   .right-panel.visible {
-    width: 50%;
+    width: 100%;
     display: flex !important;
   }
   @media (max-width: 960px) {
