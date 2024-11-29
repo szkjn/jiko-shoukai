@@ -55,7 +55,7 @@
     background-color: #fff;
   }
   .sign {
-    height: 20px;
+    height: 18px;
   }
   .about,
   .back {

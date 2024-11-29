@@ -119,7 +119,7 @@
 
     <div class="right-panel" style="width: {!isPanelOffScreen ? '33%' : '50%'}">
       {#if selectedProject}
-        <div class="image-container">
+        <div class="image-container flex flex-col">
           {#each selectedProject.img as image}
             <img src="images/{image}" alt={selectedProject.title} />
           {/each}
@@ -237,5 +237,9 @@
     top: 60px;
     height: 100%;
     /* border: 1px solid black; */
+  }
+
+  .image-container {
+    align-items: end;
   }
 </style>
