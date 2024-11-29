@@ -32,10 +32,6 @@
 </div>
 
 <style>
-  .about-panel {
-    /* border: 1px solid red; */
-    /* width: 100vw; */
-  }
   p {
     font-family: "Averia Serif Libre", serif;
     font-size: 0.8rem;

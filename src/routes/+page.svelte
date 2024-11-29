@@ -4,26 +4,17 @@
   import { projects } from "../data/projects";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
-  import { onMount } from "svelte";
 
-  let isPanelOffScreen = false;
-  let selectedCategory: Category | null = null;
+  let isAboutVisible = false;
   let selectedProject: Project | null = null;
 
   function handleAboutClick() {
-    isPanelOffScreen = !isPanelOffScreen;
+    isAboutVisible = !isAboutVisible;
     selectedProject = null;
-    // Scroll the window to the top
     window.scrollTo({
       top: 0,
       behavior: "instant",
     });
-  }
-
-  $: {
-    if (typeof document !== "undefined") {
-      document.body.style.overflow = isPanelOffScreen ? "hidden" : "";
-    }
   }
 
   let categories: Category[] = [
@@ -33,15 +24,6 @@
     "talks",
     "programming",
   ];
-
-  const handleCategorySelect = (category: Category) => {
-    // Toggle category selection
-    selectedCategory = selectedCategory === category ? null : category;
-    // Deselect project when category changes
-    if (selectedCategory !== category) {
-      selectedProject = null;
-    }
-  };
 
   const handleProjectSelect = (project: Project) => {
     selectedProject = selectedProject === project ? null : project;
@@ -69,9 +51,9 @@
 </script>
 
 <div class="page-container">
-  <Header on:about-click={handleAboutClick} {isPanelOffScreen} />
-  <main class="flex flex-row w-full justify-between">
-    <div class="left-panel {isPanelOffScreen ? 'off-screen' : ''}">
+  <Header on:about-click={handleAboutClick} {isAboutVisible} />
+  <main class="flex flex-row flex-no-wrap w-full justify-between">
+    <div class="left-panel {isAboutVisible ? 'invisible' : ''}">
       <!-- Display categories and their projects -->
       {#each categories as category}
         <div class="category-section">
@@ -96,20 +78,31 @@
                 </div>
               </button>
               {#if selectedProject === project}
-                <p class="desc pb-4">
-                  {@html project.desc
-                    .replace(/\n\n/g, "<br /><br />")
-                    .replace(/\n/g, "<br />")}
-                  {#if project.links && project.links.length > 0}
-                    <br />
-                    {#each project.links as link}
+                <div
+                  class="project-details flex flex-row align-items justify-between pb-4"
+                >
+                  <p class="desc">
+                    {@html project.desc
+                      .replace(/\n\n/g, "<br /><br />")
+                      .replace(/\n/g, "<br />")}
+                    {#if project.links && project.links.length > 0}
                       <br />
-                      <a href={link.url} target="_blank">
-                        ↗{link.label}
-                      </a>
+                      {#each project.links as link}
+                        <br />
+                        <a href={link.url} target="_blank">
+                          ↗{link.label}
+                        </a>
+                      {/each}
+                    {/if}
+                  </p>
+                  <div
+                    class="image-container flex flex-row flex-wrap justify-end"
+                  >
+                    {#each selectedProject.img as image}
+                      <img src="images/{image}" alt={selectedProject.title} />
                     {/each}
-                  {/if}
-                </p>
+                  </div>
+                </div>
               {/if}
             {/each}
           </div>
@@ -117,15 +110,15 @@
       {/each}
     </div>
 
-    <div class="right-panel" style="width: {!isPanelOffScreen ? '33%' : '50%'}">
-      {#if selectedProject}
+    <div class="right-panel {isAboutVisible ? 'visible' : ''}">
+      <!-- {#if selectedProject}
         <div class="image-container flex flex-col">
           {#each selectedProject.img as image}
             <img src="images/{image}" alt={selectedProject.title} />
           {/each}
         </div>
-      {/if}
-      {#if isPanelOffScreen}
+      {/if} -->
+      {#if isAboutVisible}
         <About />
       {/if}
     </div>
@@ -147,7 +140,7 @@
   }
 
   img {
-    max-width: 100%;
+    max-width: 70%;
     max-height: 70vh;
     height: auto;
   }
@@ -158,13 +151,13 @@
     margin: 0 auto;
   }
   .left-panel {
-    width: 50%;
-    /* border: 2px solid black; */
+    width: 100%;
+    border: 2px solid red;
     transition: transform 0.3s ease;
   }
 
-  .left-panel.off-screen {
-    transform: translateX(-110%);
+  .left-panel.invisible {
+    display: none;
   }
 
   .category-btn {
@@ -177,23 +170,32 @@
     font-family: "Libre Franklin", sans-serif;
     font-size: 0.8rem;
     user-select: none;
+    width: 50%;
+  }
+  .project-list {
     width: 100%;
   }
-  /* .category-btn:hover {
-    color: #83a;
-    border-bottom: 1px solid #83a;
-  } */
   .project-header {
     padding: 0;
-    width: fit-content;
-    border: 1px solid white;
+    width: 100%;
+    border: 1px solid pink;
     user-select: none;
+  }
+  .project-header > div,
+  .desc {
+    width: 50%;
   }
 
   .project-header:hover {
     /* text-decoration: underline; */
     background: black;
     color: white;
+  }
+
+  .image-container {
+    width: 45%;
+    border: 1px solid green;
+    align-items: end;
   }
 
   .date {
@@ -230,16 +232,51 @@
   }
 
   .right-panel {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     user-select: none;
-    position: sticky;
-    top: 60px;
-    height: 100%;
-    /* border: 1px solid black; */
+    width: 100%;
+    border: 1px solid blue;
   }
 
-  .image-container {
-    align-items: end;
+  .right-panel.visible {
+    width: 50%;
+    display: flex !important;
+  }
+  @media (max-width: 960px) {
+    .left-panel {
+      width: 100%;
+    }
+    .left-panel.invisible {
+      display: none;
+    }
+
+    .category-btn {
+      width: 100%;
+    }
+
+    .right-panel {
+      display: none;
+    }
+    .right-panel.visible {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .project-details {
+      flex-direction: column;
+    }
+    .project-header > div,
+    .desc,
+    .image-container {
+      width: 100%;
+    }
+    .image-container {
+      justify-content: start;
+    }
+    img {
+      max-width: 100%;
+    }
   }
 </style>

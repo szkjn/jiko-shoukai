@@ -16,19 +16,21 @@
 
 <style>
   * {
-    font-family: "Averia Serif Libre", serif;
     font-size: 0.8rem;
-    line-height: 1rem;
     user-select: none;
   }
 
   footer {
     border-top: 1px solid black;
+    margin-bottom: 0;
   }
   p {
     text-align: center;
   }
   span {
+    font-family: "Averia Serif Libre", serif;
+    font-size: 0.8rem;
+    line-height: 1rem;
     font-weight: 900;
   }
   img {

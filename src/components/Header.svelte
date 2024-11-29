@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
 
   export let title = "jun suzuki";
-  export let isPanelOffScreen: boolean;
+  export let isAboutVisible: boolean;
 
   const dispatch = createEventDispatcher();
 
@@ -21,7 +21,7 @@
       class="text-sm font-bold pl-2 flex flex-row gap-2 items-center"
       on:click={handleAboutClick}
     >
-      {#if isPanelOffScreen}<img
+      {#if isAboutVisible}<img
           src="/png/back.png"
           alt="jun-in-japanese"
           class="back"
