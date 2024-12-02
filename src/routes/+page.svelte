@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
+  import SubHeader from "../components/SubHeader.svelte";
   import About from "../components/About.svelte";
   import { projects } from "../data/projects";
   import type { Project } from "../types/project";
@@ -52,6 +53,10 @@
 
 <div class="page-container">
   <Header on:about-click={handleAboutClick} {isAboutVisible} />
+  {#if !isAboutVisible}
+    <SubHeader />
+  {/if}
+
   <main class="flex flex-row flex-no-wrap w-full justify-between">
     <div class="left-panel {isAboutVisible ? 'invisible' : ''}">
       <!-- Display categories and their projects -->
@@ -132,7 +137,7 @@
 
   img {
     max-width: 70%;
-    max-height: 70vh;
+    max-height: 40vh;
     height: auto;
   }
 
@@ -179,7 +184,7 @@
 
   .project-header:hover {
     /* text-decoration: underline; */
-    background: black;
+    background: #888;
     color: white;
   }
 
