@@ -63,19 +63,17 @@
           <div class="project-list py-2 flex flex-col">
             {#each getProjectsByCategory(category) as project}
               <button
-                class="project-header"
+                class="project-header flex flex-row items-center"
                 on:click={() => handleProjectSelect(project)}
               >
-                <div class="flex flex-row items-center">
-                  <p class="date pr-2">
-                    {formatDateShort(project.date)}
-                  </p>
-                  <h4>
-                    <span class="title">
-                      {project.title}
-                    </span>, {project.loc}
-                  </h4>
-                </div>
+                <p class="date pr-2">
+                  {formatDateShort(project.date)}
+                </p>
+                <h4>
+                  <span class="title">
+                    {project.title}
+                  </span><span class="loc">, {project.loc}</span>
+                </h4>
               </button>
               {#if selectedProject === project}
                 <div
@@ -111,13 +109,6 @@
     </div>
 
     <div class="right-panel {isAboutVisible ? 'visible' : ''}">
-      <!-- {#if selectedProject}
-        <div class="image-container flex flex-col">
-          {#each selectedProject.img as image}
-            <img src="images/{image}" alt={selectedProject.title} />
-          {/each}
-        </div>
-      {/if} -->
       {#if isAboutVisible}
         <About />
       {/if}
@@ -264,11 +255,29 @@
   }
 
   @media (max-width: 760px) {
+    .category-btn {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      border-bottom: 6px solid black;
+      margin-bottom: 0;
+      padding-top: 1rem;
+    }
+    .project-list {
+      padding: 0;
+    }
+    .project-header {
+      flex-direction: column;
+      align-items: start;
+      gap: 0.5rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #aaa;
+    }
+    /* .date {1 */
     .project-details {
       flex-direction: column;
       gap: 1rem;
     }
-    .project-header > div,
+    .project-header,
     .desc,
     .image-container {
       width: 100%;
@@ -278,6 +287,22 @@
     }
     img {
       max-width: 100%;
+    }
+
+    a,
+    button,
+    h4,
+    .date {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+    }
+    .desc {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+    .title {
+      font-size: 1.6rem;
+      line-height: 1rem;
     }
   }
 </style>

@@ -100,13 +100,13 @@ export const projects: Project[] = [
     ]
 },
 {
-    title: 'CSO 480 400 [Track]',
+    title: 'CSO 384 400 [Track]',
     loc: 'Exiles Electronics, Budapest, Hungary',
     category: ['releases'],
     tags: ['releases', 'music', 'compilation'],
     date: '15.01.2020',
     desc: "\nⓘ solidarity compilation for The City is For All (A Város Mindenkié)\n\nThe City is For All is a volunteer based grassroots organization operating in Budapest, in which homeless and non-homeless activists work together for housing rights and social justice. The organization operates as an informal advocacy group.",
-    img: ['antjemina_01.jpg'],
+    img: ['exiles_01.jpg'],
     links: [
         {label: "Bandcamp", url: "https://exiles-electronics.bandcamp.com/track/jun-suzuki-cso-384-400"},
     ]
@@ -215,7 +215,7 @@ export const projects: Project[] = [
     category: ['installations', 'programming'],
     tags: ['collaboration', 'generative_AI', 'interactive', 'programming'],
     date: '15.04.2024',
-    desc: "\n<i>Real-time AI-generated interactive sound installation.\nIn collaboration with new media artist Emilia Gentis.\nCurated by Elena Feijoo and Cathy Bijur, as part of Exgirlfriend Galerie closing event.</i>\n\nIn this installation, visitors confront the intersection of technology and self-perception, approaching a white pedestal to engage with a seemingly simple mechanism: a lone button. Suspended above, a constellation of smartphones dangles, ready to capture a photo of the subject. With a press, the installation whirs to life, capturing an image that becomes the subject of scrutiny by a trinity of AIs. These AIs analyse the image and ultimately judge the participant. Within moments, a synthesized voice, laden with the biases inherent to its programming, delivers a 30-second critique echoing through the exhibition space. Each AI persona, from an ad-targeting algorithm with motives as opaque as they are intrusive, to a surveillance entity quick to assume the worst, offers a unique, if sardonic, perspective on the human condition.\n\nObservee In Situ serves as a mirror reflecting the transformative power and potential perils of our digital age. It’s a reminder of the thin line between transformation and loss of self, urging visitors to ponder the perpetual cycle of reinvention in an era defined by the watchful eyes of technology.",
+    desc: "\n<i>Real-time AI-generated interactive sound installation.\nIn collaboration with new media artist Emilia Gentis.\nCurated by Elena Feijoo and Cathy Bijur, as part of Exgirlfriend Galerie closing event.</i>\n\nIn this installation, visitors confront the intersection of technology and self-perception, approaching a white pedestal to engage with a seemingly simple mechanism: a lone button. Suspended above, a constellation of smartphones dangles, ready to capture a photo of the subject. With a press, the installation whirs to life, capturing an image that becomes the subject of scrutiny by a trinity of AIs. These AIs analyse the image and ultimately judge the participant. Within moments, a synthesized voice, laden with the biases inherent to its programming, delivers a 30-second critique echoing through the exhibition space. Each AI persona, from an ad-targeting algorithm with motives as opaque as they are intrusive, to a surveillance entity quick to assume the worst, offers a unique, if sardonic, perspective on the human condition.\n\n<i>Observee In Situ</i> serves as a mirror reflecting the transformative power and potential perils of our digital age. It’s a reminder of the thin line between transformation and loss of self, urging visitors to ponder the perpetual cycle of reinvention in an era defined by the watchful eyes of technology.",
     img: ['observee_in_situ_02.jpg', 'observee_in_situ_03.jpg'],
     links: [{label: "Instagram Reel", url: "https://www.instagram.com/p/C6nllI7sTSO/"}]
 },
@@ -331,7 +331,7 @@ export const projects: Project[] = [
     category: ['performances'],
     tags: ['performances', 'dance'],
     date: '19.10.2024',
-    desc: "\n<i>Live performance in collaboration with Daloy Dance Company.\nWith the support of The Japan Foundation of Manila.</i>",
-    img: ['tryst_01.jpg']
+    desc: "\n<i>Live performance in collaboration with Daloy Dance Company.\nWith the support of The Japan Foundation of Manila.</i><br/><br/>Daloy Dance Company is a contemporary dance theater group that stands at the intersection of art and activism. Their work is deeply rooted in the embodied histories of the Filipino people, often addressing themes of identity, community, and social transformation. Through their performances, workshops, and community engagements, they seek to create a space where art becomes a catalyst for change, healing, and empowerment.<br/><br/><i>\"Fifth Wall Fest presents Tryst by Daloy Dance Company<br/><br/>A powerful collaboration between Filipino dance marker Ea Torrado, Filipino-Canadian choreographer Alvin Collantes, and Japanese-French sound artist Jun Suzuki. Supported by Japan Foundation Manila, \"Tryst\" delves into power, submission, and identity through a queer lens, challenging societal norms and exploring what it means to exist in a queer world.\"</i>",
+    img: ['tryst_01.jpg', 'tryst_02.jpg']
 },
 ];

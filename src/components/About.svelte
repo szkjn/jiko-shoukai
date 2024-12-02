@@ -16,8 +16,8 @@
     devices, vocals, and field recordings to create a rich tapestry of sound
     that reflects his <span>multicultural heritage</span>. <br /><br />He
     recently published <i>Kuchibiru / クチビル</i>, the first single from his
-    forthcoming album <i>A Distance So Close</i> on XVIIIPENINSULE Records. For
-    the past two years, he has been touring <i>Fluids</i>, a collaboration with
+    debute EP <i>A Distance So Close</i> on XVIIIPENINSULE Records. For the past
+    two years, he has been touring <i>Fluids</i>, a collaboration with
     dancer-choreographer Alvin Collantes, which explores
     <span>cultural and gender identities through body, music and voice</span>,
     in both intimate and established settings in Germany (Tanz im August, Bucht
@@ -26,7 +26,8 @@
     Business). <br /> <br />His installation work has been showcased in
     residencies and exhibitions across Georgia (AqTusheti), Budapest (Patyolat
     Gallery, BRFK), Iceland (Gamli Skoli), and Berlin (Flughafen Tempelhof, Alte
-    Münze, Manifest:IO, Exgirlfirend Gallery, LiTE-HAUS Galerie, 90mil).
+    Münze, Manifest:IO, Exgirlfriend Gallery, Merantix AI Campus, LiTE-HAUS
+    Galerie, 90mil).
   </p>
   <img src="/images/banner.jpg" alt="" />
 </div>
@@ -42,5 +43,12 @@
   }
   span {
     font-weight: 900;
+  }
+
+  @media (max-width: 760px) {
+    p {
+      font-size: 1.6rem;
+      line-height: 1.8rem;
+    }
   }
 </style>
