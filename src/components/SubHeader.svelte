@@ -3,8 +3,8 @@
 
 <section>
   <div class="sub-header flex flex-col items-center justify-center">
-    <p>I believe in multidisciplinary + transversal design.</p>
-    <p>I'm fascinated—I'm terrified by generative AI.</p>
+    <p>I believe in multidisciplinary + transversal designs.</p>
+    <p>I'm fascinated / terrified by generative AI.</p>
     <p>I'm a foreigner in my home country.</p>
   </div>
 </section>

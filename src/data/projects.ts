@@ -334,4 +334,24 @@ export const projects: Project[] = [
     desc: "\n<i>Live performance in collaboration with Daloy Dance Company.\nWith the support of The Japan Foundation of Manila.</i><br/><br/>Daloy Dance Company is a contemporary dance theater group that stands at the intersection of art and activism. Their work is deeply rooted in the embodied histories of the Filipino people, often addressing themes of identity, community, and social transformation. Through their performances, workshops, and community engagements, they seek to create a space where art becomes a catalyst for change, healing, and empowerment.<br/><br/><i>\"Fifth Wall Fest presents Tryst by Daloy Dance Company<br/><br/>A powerful collaboration between Filipino dance marker Ea Torrado, Filipino-Canadian choreographer Alvin Collantes, and Japanese-French sound artist Jun Suzuki. Supported by Japan Foundation Manila, \"Tryst\" delves into power, submission, and identity through a queer lens, challenging societal norms and exploring what it means to exist in a queer world.\"</i>",
     img: ['tryst_01.jpg', 'tryst_02.jpg']
 },
+{
+    title: 'Wilding AI Lab',
+    loc: 'MONOM, CTM Festival',
+    category: ['performances', 'programming'],
+    tags: ['performances', 'AI', 'LLM', 'spatial sound'],
+    date: '26.01.2025',
+    desc: "\n<i>Live performance in collaboration with Ninon Devis (IRCAM).\nAs part of the Wilding AI Lab, a workshop-residency exploring creative use of AI systems with text, audio, and sound spatialization, alongside nine other fellow artists, guided by facilitators Beth Coleman, Maurice Jones, Portrait XO, and Alexandre Saunier.\nInitially launched at MUTEK Festival  to reopen the black boxes of generative AI, Wilding AI now lands in MONOM's 4DSOUND spaceship, as part of CTM Festival 2025.",
+    img: ['wilding_ai_1.png', 'wilding_ai_3.png'],
+    links: [{label: "About the lab (CTM)", url: "https://www.ctm-festival.de/festival-2025/open-calls/wilding-ai"}]
+},
+// {
+//     title: 'Lan Ummok [Publication]',
+//     loc: 'Almanac (Sound Art Lab, Struer Tracks 2025)',
+//     category: ['releases'],
+//     tags: ['releases', 'publications', 'text', 'generative_AI'],
+//     date: 'TBA',
+//     desc: '\n<i>Lan Ummok</i> is a fictional short story that explores themes at the intersection of collective narratives, identity and creativity at the age of generative AI and Large Language Models. The story fantasizes a global experiment shaped by diverse audio contributions from all around the world, reflecting on the challenges and possibilities of collective creation in a near future.',    
+//     img: ['wilding_ai_1.png'],
+//     links: [{label: "About Almanac", url: "https://soundartlab.org/almanac/"}]
+// },
 ];

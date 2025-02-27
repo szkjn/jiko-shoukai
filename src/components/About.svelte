@@ -19,8 +19,7 @@
       <span>multicultural heritage</span>.<br /><br />
     </p>
     <p>
-      He recently published <i>Kuchibiru / クチビル</i>, the first single from
-      his debute EP <i>A Distance So Close</i> on XVIIIPENINSULE Records. For
+      He recently published a vocals experimental EP <i>A Distance So Near</i> on XVIIIPENINSULE Records. For
       the past two years, he has been touring <i>Fluids</i>, a collaboration
       with dancer-choreographer Alvin Collantes, which explores
       <span>cultural and gender identities through body, music and voice</span>,
@@ -30,7 +29,7 @@
       of Beautiful Business). <br /> <br />His installation work has been
       showcased in residencies and exhibitions across Georgia (AqTusheti),
       Budapest (Patyolat Gallery, BRFK), Iceland (Gamli Skoli), and Berlin
-      (Flughafen Tempelhof, Alte Münze, Manifest:IO, Exgirlfriend Gallery,
+      (CTM Festival, MONOM, Flughafen Tempelhof, Alte Münze, Manifest:IO, Exgirlfriend Gallery,
       Merantix AI Campus, LiTE-HAUS Galerie, 90mil).
     </p>
   </div>
