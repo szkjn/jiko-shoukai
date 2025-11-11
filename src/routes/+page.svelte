@@ -1,6 +1,5 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
-  import SubHeader from "../components/SubHeader.svelte";
   import About from "../components/About.svelte";
   import { projects } from "../data/projects";
   import type { Project } from "../types/project";
@@ -18,23 +17,46 @@
     });
   }
 
+  function handleBackClick() {
+    selectedProject = null;
+  }
+
   let categories: Category[] = [
     "installations",
     "performances",
     "releases",
     "talks",
-    "programming",
   ];
+
+  let activeFilter: Category | null = null;
+
+  const categoryColors: Record<string, string> = {
+    installations: 'rgba(255, 146, 146, 0.7)', // FF9292
+    performances: 'rgba(171, 255, 171, 0.7)', // ABFFAB
+    releases: 'rgba(180, 190, 255, 0.7)', // B4BEFF
+    talks: 'rgba(113, 201, 255, 0.7)', // 71C9FF
+  };
+
+  const getCategoryColor = (category: string): string => {
+    return categoryColors[category] || 'rgba(143, 143, 143, 0.7)';
+  };
 
   const handleProjectSelect = (project: Project) => {
     selectedProject = selectedProject === project ? null : project;
   };
 
-  const getProjectsByCategory = (category: Category) => {
-    return sortedProjects.filter((project) =>
-      project.category.includes(category)
-    );
+  const handleCategoryClick = (category: Category) => {
+    activeFilter = activeFilter === category ? null : category;
+    selectedProject = null;
   };
+
+  $: visibleProjects = sortedProjects.filter(project => 
+    !project.category.includes('programming')
+  );
+
+  $: filteredProjects = activeFilter 
+    ? visibleProjects.filter(project => activeFilter && project.category.includes(activeFilter))
+    : visibleProjects;
 
   function parseDate(dateStr: string): Date {
     const [day, month, year] = dateStr.split(".").map(Number);
@@ -53,64 +75,72 @@
 
 <div class="page-container">
   <Header on:about-click={handleAboutClick} {isAboutVisible} />
-  {#if !isAboutVisible}
-    <SubHeader />
-  {/if}
 
-  <main class="flex flex-row flex-no-wrap w-full justify-between">
-    <div class="left-panel {isAboutVisible ? 'invisible' : ''}">
-      <!-- Display categories and their projects -->
+  <main class="flex flex-row flex-no-wrap w-full {isAboutVisible ? 'invisible' : ''}">
+    <!-- Category filters - LEFT COLUMN -->
+    <div class="categories-container">
       {#each categories as category}
-        <div class="category-section">
-          <button class="category-btn" aria-disabled="true">
-            {category}
+        <button 
+          class="category-filter" 
+          class:active={activeFilter === category}
+          on:click={() => handleCategoryClick(category)}
+        >
+        {category}
+        <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
+        </button>
+      {/each}
+    </div>
+
+    <!-- Project list - RIGHT COLUMN -->
+    <div class="projects-container">
+      {#if selectedProject}
+        <!-- Details view -->
+        <div class="detail-view">
+          <button class="back-button" on:click={handleBackClick}>
+            &lt; back
           </button>
-          <div class="project-list py-2 flex flex-col">
-            {#each getProjectsByCategory(category) as project}
-              <button
-                class="project-header flex flex-row items-center"
-                on:click={() => handleProjectSelect(project)}
-              >
-                <p class="date pr-2">
-                  {formatDateShort(project.date)}
-                </p>
-                <h4>
-                  <span class="title">
-                    {project.title}
-                  </span><span class="loc">, {project.loc}</span>
-                </h4>
-              </button>
-              {#if selectedProject === project}
-                <div
-                  class="project-details flex flex-row align-items justify-between pb-4"
-                >
-                  <p class="desc">
-                    {@html project.desc
-                      .replace(/\n\n/g, "<br /><br />")
-                      .replace(/\n/g, "<br />")}
-                    {#if project.links && project.links.length > 0}
-                      <br />
-                      {#each project.links as link}
-                        <br />
-                        <a href={link.url} target="_blank">
-                          ↗{link.label}
-                        </a>
-                      {/each}
-                    {/if}
-                  </p>
-                  <div
-                    class="image-container flex flex-row flex-wrap justify-end"
-                  >
-                    {#each selectedProject.img as image}
-                      <img src="images/{image}" alt={selectedProject.title} />
-                    {/each}
-                  </div>
-                </div>
+          <button class="project-header-detail">
+            <span class="title">{selectedProject.title}</span><span class="loc">, {selectedProject.loc}</span>
+            <span class="project-dot" style="background-color: {getCategoryColor(selectedProject.category[0])}"></span>
+          </button>
+          <div class="project-details">
+            <div class="desc">
+              <div class="project-date">{formatDateShort(selectedProject.date)}</div>
+              {@html selectedProject.desc
+                .replace(/\n\n/g, "<br /><br />")
+                .replace(/\n/g, "<br />")}
+              {#if selectedProject.links && selectedProject.links.length > 0}
+                <br />
+                {#each selectedProject.links as link}
+                  <br />
+                  <a href={link.url} target="_blank">
+                    > {link.label}
+                  </a>
+                {/each}
               {/if}
-            {/each}
+            </div>
+            <div class="image-container">
+              {#each selectedProject.img as image}
+                <img src="images/{image}" alt={selectedProject.title} />
+              {/each}
+            </div>
           </div>
         </div>
-      {/each}
+      {:else}
+        <!-- List view -->
+        {#each filteredProjects as project}
+          {@const projectCategory = project.category[0]}
+          <div class="project-item-wrapper">
+            <button
+              class="project-header"
+              on:click={() => handleProjectSelect(project)}
+            >
+              <span class="title">{project.title}</span><span class="loc">, {project.loc}</span>
+              <span class="project-dot" style="background-color: {getCategoryColor(projectCategory)}"></span>
+            </button>
+          </div>
+        {/each}
+      {/if}
     </div>
 
     <div class="right-panel {isAboutVisible ? 'visible' : ''}">
@@ -122,6 +152,11 @@
 </div>
 
 <style>
+  * {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  }
+
   button,
   a {
     cursor: crosshair;
@@ -129,126 +164,219 @@
     margin: 0;
     text-align: start;
   }
-  h4 {
-    font-size: 0.8rem;
-    /* line-height: 0.8rem; */
-    font-family: "Averia Serif Libre", serif;
-  }
-
-  img {
-    max-width: 70%;
-    max-height: 40vh;
-    height: auto;
-  }
 
   .page-container {
     padding: 0 1rem;
     max-width: 1400px;
     margin: 0 auto;
-  }
-  .left-panel {
-    width: 100%;
-    /* border: 2px solid red; */
-    transition: transform 0.3s ease;
+    background-color: #8F8F8F;
+    color: #FFFFFF;
+    min-height: 100vh;
   }
 
-  .left-panel.invisible {
+  main.invisible {
     display: none;
   }
 
-  .category-btn {
-    cursor: crosshair;
-    border-bottom: 1px solid black;
+  /* Category filters - LEFT COLUMN */
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    min-width: 200px;
+    transition: opacity 0.3s ease;
+  }
 
-    transition: 0.5s ease;
-    text-transform: uppercase;
+  .category-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    user-select: none;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    transition: opacity 0.2s;
+  }
+
+  .category-filter:hover {
+    opacity: 0.7;
+  }
+
+  .category-filter.active {
     font-weight: 700;
-    font-family: "Libre Franklin", sans-serif;
-    font-size: 0.8rem;
-    user-select: none;
+  }
+
+  .category-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Projects container - RIGHT COLUMN */
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+    padding-top: 3rem;
+  }
+
+  .project-item-wrapper {
+    margin-bottom: 0;
+  }
+
+  .detail-view {
     width: 100%;
   }
-  .project-list {
-    width: 100%;
-  }
-  .project-header {
+
+  .back-button {
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: #FFFFFF;
+    background: none;
+    border: none;
     padding: 0;
-    width: 100%;
-    /* border: 1px solid pink; */
-    user-select: none;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
   }
-  .project-header > div,
-  .desc {
-    width: 50%;
+
+  .back-button:hover {
+    opacity: 0.7;
+  }
+
+  .project-header-detail {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding: 0.1rem 0 0.5rem 0;
+    margin-bottom: 1rem;
+    user-select: none;
+    background: none;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    border: none;
+    cursor: default;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding: 0.1rem 0;
+    user-select: none;
+    background: none;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    transition: opacity 0.2s;
   }
 
   .project-header:hover {
-    /* text-decoration: underline; */
-    background: #888;
-    color: white;
+    opacity: 0.7;
+  }
+
+  .project-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+
+  .title {
+    font-style: italic;
+  }
+
+  .loc {
+    color: #FFFFFF;
+  }
+
+  .project-date {
+    font-size: 0.875rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    color: #FFFFFF;
+  }
+
+  /* Project details */
+  .project-details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-left: 0;
+  }
+
+  .desc {
+    flex: 0 0 auto;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #FFFFFF;
+    max-width: 35%;
+    text-align: justify;
+  }
+
+  .desc a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .desc a:hover {
+    text-decoration: underline;
   }
 
   .image-container {
-    width: 45%;
-    /* border: 1px solid green; */
-    align-items: end;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 45%;
   }
 
-  .date {
-    font-family: "Roboto Mono";
-    font-size: 0.8rem;
-    line-height: 0.8rem;
-  }
-  .title {
-    font-family: "Averia Serif Libre", serif;
-    font-size: 0.9rem;
-    line-height: 0.9rem;
-    font-style: italic;
-    font-weight: 900;
-  }
-  .desc {
-    text-align: justify;
-    font-family: "Libre Franklin", sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    line-height: 1rem;
-  }
-  a {
-    text-align: justify;
-    font-family: "Averia Serif Libre", serif;
-    font-weight: 900;
-    font-size: 0.8rem;
-    text-decoration: underline;
-    color: white;
-    background: black;
-  }
-  a:hover {
-    color: black;
-    background: white;
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
   }
 
+  /* Right panel */
   .right-panel {
     display: none;
     justify-content: flex-end;
     user-select: none;
     width: 100%;
-    /* border: 1px solid blue; */
   }
 
   .right-panel.visible {
     width: 100%;
     display: flex !important;
   }
+
   @media (max-width: 960px) {
-    .left-panel {
-      width: 100%;
-    }
-    .left-panel.invisible {
-      display: none;
+    main {
+      flex-direction: column;
     }
 
-    .category-btn {
-      width: 100%;
+    .categories-container {
+      flex-direction: row;
+      padding-right: 0;
+      padding-top: 2rem;
+      min-width: auto;
+    }
+
+    .projects-container {
+      padding-top: 2rem;
     }
 
     .right-panel {
@@ -260,54 +388,18 @@
   }
 
   @media (max-width: 760px) {
-    .category-btn {
-      font-size: 2rem;
-      line-height: 2.5rem;
-      border-bottom: 6px solid black;
-      margin-bottom: 0;
-      padding-top: 1rem;
-    }
-    .project-list {
-      padding: 0;
-    }
-    .project-header {
-      flex-direction: column;
-      align-items: start;
-      gap: 0.5rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #aaa;
-    }
-    /* .date {1 */
-    .project-details {
-      flex-direction: column;
+    .categories-container {
       gap: 1rem;
     }
-    .project-header,
-    .desc,
-    .image-container {
-      width: 100%;
-    }
-    .image-container {
-      justify-content: start;
-    }
-    img {
-      max-width: 100%;
+
+    .project-details {
+      flex-direction: column;
+      padding-left: 0;
     }
 
-    a,
-    button,
-    h4,
-    .date {
-      font-size: 1.3rem;
-      line-height: 1.3rem;
-    }
-    .desc {
-      font-size: 1.2rem;
-      line-height: 1.6rem;
-    }
-    .title {
-      font-size: 1.6rem;
-      line-height: 1rem;
+    .desc,
+    .image-container {
+      max-width: 100%;
     }
   }
 </style>

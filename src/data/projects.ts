@@ -70,7 +70,7 @@ export const projects: Project[] = [
     category: ['releases'],
     tags: ['releases', 'music', 'EP'],
     date: '18.10.2024',
-    desc: "\nReleased on XVIIIPENINSULE, September 18, 2024.\n\nSaxophone on A Distance So Near by Nicolas Rode\nSpoken words on Feluleikur (Part 2) by the kids from Hríseyjarskóli\nMixed and mastered by Isabel Schröer at olo mastering, Berlin, Germany\nComposed, recorded and produced by Jun Suzuki at Gamli Skóli, Hrísey, Iceland\nWith the kind support of (strangers, friends, family &) Label : XVIIIEMEPENINSULE",
+    desc: "\nReleased on XVIIIPENINSULE, September 18, 2024.\n\nSaxophone on A Distance So Near by Nicolas Rode. Spoken words on Feluleikur (Part 2) by the kids from Hríseyjarskóli. Mixed and mastered by Isabel Schröer at olo mastering, Berlin, Germany. Composed, recorded and produced by Jun Suzuki at Gamli Skóli, Hrísey, Iceland. With the kind support of (strangers, friends, family &) XVIIIEMEPENINSULE.",
     img: ['adsn_01.jpg'],
     links: [
         {label: "Bandcamp", url: "https://junsuzuki.bandcamp.com/album/a-distance-so-near"},
@@ -212,7 +212,7 @@ export const projects: Project[] = [
 {
     title: 'Observee In Situ',
     loc: 'Exgirlfriend Galerie, Berlin, Germany',
-    category: ['installations', 'programming'],
+    category: ['installations'],
     tags: ['collaboration', 'generative_AI', 'interactive', 'programming'],
     date: '15.04.2024',
     desc: "\n<i>Real-time AI-generated interactive sound installation.\nIn collaboration with new media artist Emilia Gentis.\nCurated by Elena Feijoo and Cathy Bijur, as part of Exgirlfriend Galerie closing event.</i>\n\nIn this installation, visitors confront the intersection of technology and self-perception, approaching a white pedestal to engage with a seemingly simple mechanism: a lone button. Suspended above, a constellation of smartphones dangles, ready to capture a photo of the subject. With a press, the installation whirs to life, capturing an image that becomes the subject of scrutiny by a trinity of AIs. These AIs analyse the image and ultimately judge the participant. Within moments, a synthesized voice, laden with the biases inherent to its programming, delivers a 30-second critique echoing through the exhibition space. Each AI persona, from an ad-targeting algorithm with motives as opaque as they are intrusive, to a surveillance entity quick to assume the worst, offers a unique, if sardonic, perspective on the human condition.\n\n<i>Observee In Situ</i> serves as a mirror reflecting the transformative power and potential perils of our digital age. It’s a reminder of the thin line between transformation and loss of self, urging visitors to ponder the perpetual cycle of reinvention in an era defined by the watchful eyes of technology.",
@@ -222,7 +222,7 @@ export const projects: Project[] = [
 {
     title: 'Observee In Situ',
     loc: 'Merantix AI Campus, Berlin, Germany',
-    category: ['installations', 'programming'],
+    category: ['installations'],
     tags: ['collaboration', 'generative_AI', 'interactive', 'programming'],
     date: '15.09.2024',
     desc: "\n<i>Real-time AI-generated interactive sound installation.\nIn collaboration with new media artist Emilia Gentis.\nCurated by Furturehain and Berlin University Alliance, as part of AI Ethics Symposium at Merantix AI Campus, Berlin.</i>\n\nIn this installation, visitors confront the intersection of technology and self-perception, approaching a white pedestal to engage with a seemingly simple mechanism: a lone button. Suspended above, a constellation of smartphones dangles, ready to capture a photo of the subject. With a press, the installation whirs to life, capturing an image that becomes the subject of scrutiny by a trinity of AIs. These AIs analyse the image and ultimately judge the participant. Within moments, a synthesized voice, laden with the biases inherent to its programming, delivers a 30-second critique echoing through the exhibition space. Each AI persona, from an ad-targeting algorithm with motives as opaque as they are intrusive, to a surveillance entity quick to assume the worst, offers a unique, if sardonic, perspective on the human condition.\n\nObservee In Situ serves as a mirror reflecting the transformative power and potential perils of our digital age. It’s a reminder of the thin line between transformation and loss of self, urging visitors to ponder the perpetual cycle of reinvention in an era defined by the watchful eyes of technology.",
@@ -282,7 +282,7 @@ export const projects: Project[] = [
     loc: 'Goethe Institut, Budapest, Hungary',
     category: ['performances'],
     tags: ['performances', 'radio', 'programming', 'audiovisual'],
-    date: '04.10.2024',
+    date: '02.09.2024',
     desc: "\nLive performance using real-time short-term frequencies and AI-assisted audio sequencing.\n\nI dream of a sphere without corners can manifest in various forms. It's a morphing interactive apparatus. A generative soundscape. A real-time collage of radio frequencies from around the globe. Fragmented testimonies of the uprooted. Sounds that evade borders. Border-THROUGH. CROSS-border. TRANS-. PAN-. INTER-. PERI-. An ode to motion. An ode to distance and its infinite range. To the in-betweens.\n\nUsing WebSDR (Software Defined Radio) as a primary source of sound, Jun Suzuki explores the structured disorder of broadcasts, white noise and machine bleeps from around the world. These ongoing streams are channeled into interactive agents (dicy2 by Ircam) that generate additional sequences from field recordings and testimonies. The result is a constantly evolving, real-time generated, fragmented soundscape that blurs cultural boundaries, and dreams of a sphere without corners.",
     img: ['i_dream_of_a_01.jpg'],
     links: [{label: "Official website", url: "https://s2n.cashmereradio.com/programme/i-dream-of-a-sphere-without-corners"}]
@@ -316,15 +316,15 @@ export const projects: Project[] = [
     desc: "\nInvited by Futurehain, as part of their quarterly event SoireeXD.\nFacilitated by Felix Rundel (Futurehain / SoireeXD).",
     img: ['talk_soireexd_01.jpg']
 },
-{
-    title: 'Queer Asian Bodies',
-    loc: 'Fifth Wall Festival, Manila, The Philippines',
-    category: ['talks'],
-    tags: ['talks', 'asian'],
-    date: '19.10.2024',
-    desc: "\nInvited by Fifth Wall Festival.\nFacilitated by Madge Reyes (Fifth Wall Festival).",
-    img: ['talk_daloy_01.jpg']
-},
+// {
+//     title: 'Queer Asian Bodies',
+//     loc: 'Fifth Wall Festival, Manila, The Philippines',
+//     category: ['talks'],
+//     tags: ['talks', 'asian'],
+//     date: '19.10.2024',
+//     desc: "\nInvited by Fifth Wall Festival.\nFacilitated by Madge Reyes (Fifth Wall Festival).",
+//     img: ['talk_daloy_01.jpg']
+// },
 {
     title: 'TRYST',
     loc: 'Fifth Wall Festival, Manila, The Philippines',
@@ -337,21 +337,41 @@ export const projects: Project[] = [
 {
     title: 'Wilding AI Lab',
     loc: 'MONOM, CTM Festival',
-    category: ['performances', 'programming'],
-    tags: ['performances', 'AI', 'LLM', 'spatial sound'],
+    category: ['performances'],
+    tags: ['performances', 'programming', 'AI', 'LLM', 'spatial sound'],
     date: '26.01.2025',
-    desc: "\n<i>Live performance in collaboration with Ninon Devis (IRCAM).\nAs part of the Wilding AI Lab, a workshop-residency exploring creative use of AI systems with text, audio, and sound spatialization, alongside nine other fellow artists, guided by facilitators Beth Coleman, Maurice Jones, Portrait XO, and Alexandre Saunier.\nInitially launched at MUTEK Festival  to reopen the black boxes of generative AI, Wilding AI now lands in MONOM's 4DSOUND spaceship, as part of CTM Festival 2025.",
+    desc: "\n<i>Live performance in collaboration with Ninon Devis (IRCAM).</i>\n\nAs part of the Wilding AI Lab, a workshop-residency exploring creative use of AI systems with text, audio, and sound spatialization, alongside nine other fellow artists, guided by facilitators Beth Coleman, Maurice Jones, Portrait XO, and Alexandre Saunier.\n\nInitially launched at MUTEK Festival  to reopen the black boxes of generative AI, Wilding AI now lands in MONOM's 4DSOUND spaceship, as part of CTM Festival 2025.",
     img: ['wilding_ai_1.png', 'wilding_ai_3.png'],
     links: [{label: "About the lab (CTM)", url: "https://www.ctm-festival.de/festival-2025/open-calls/wilding-ai"}]
 },
-// {
-//     title: 'Lan Ummok [Publication]',
-//     loc: 'Almanac (Sound Art Lab, Struer Tracks 2025)',
-//     category: ['releases'],
-//     tags: ['releases', 'publications', 'text', 'generative_AI'],
-//     date: 'TBA',
-//     desc: '\n<i>Lan Ummok</i> is a fictional short story that explores themes at the intersection of collective narratives, identity and creativity at the age of generative AI and Large Language Models. The story fantasizes a global experiment shaped by diverse audio contributions from all around the world, reflecting on the challenges and possibilities of collective creation in a near future.',    
-//     img: ['wilding_ai_1.png'],
-//     links: [{label: "About Almanac", url: "https://soundartlab.org/almanac/"}]
-// },
+{
+    title: 'Lan Ummok',
+    loc: 'Sound Art Lab, Almanac for Struer Tracks 2025',
+    category: ['releases'],
+    tags: ['releases', 'publications', 'text', 'generative_AI'],
+    date: '14.08.2025',
+    desc: '\n<i>Lan Ummok</i> is a fictional short story that explores themes at the intersection of collective narratives, identity and creativity at the age of generative AI and Large Language Models. The story fantasizes a global experiment shaped by diverse audio contributions from all around the world, reflecting on the challenges and possibilities of collective creation in a near future.',    
+    img: ['almanac_01.png'],
+    links: [{label: "About Almanac", url: "https://soundartlab.org/almanac/"}]
+},
+{
+    title: 'Watching you looking at everything but me',
+    loc: 'SOMA Berlin, Germany',
+    category: ['installations'],
+    tags: ['installation', 'programming', 'AI', 'VSA', 'surveillance', 'interactive', 'camera'],
+    date: '31.05.2025',
+    desc: "\n<i>Interactive video installation.\n In collaboration with Edda Rabold.\nCurated by Exgirlfriend + Softlaunch, as part of LOOSE ENDS 001.</i>\n\nWATCHING YOU LOOKING AT EVERYTHING BUT ME is a collaborative installation by Edda Rabold and Jun Suzuki that turns the visitor’s gaze into both subject and spectacle. Using an OAK-D camera with an integrated facial recognition system, the work captures the visitor’s eyes, crops them in rigid rectangles, and displays them across a curved wall of wide TV screens. The resulting mosaic evokes a control room, a living archive of gazes that watch and are watched in return.\n\nThe piece draws from debates around Video Surveillance Algorithmics (VSA) and thinkers such as Félix Tréguer (Technopolice, 2024) part of eponymous collective Technopolice. It reveals how algorithmic vision fragments the body and abstracts identity into data. Rabold’s wide design practice stretching from digital fabrication to material experimentation, intersects here with Suzuki’s background in real-time AI experiments to build a work where analytical AI is both the technical tool and the subject : a quiet, circular choreography of eyes that questions visibility, intimacy, and consent in the age of AI-powered surveillance systems.\n\n<i>Pictures by Pablo Manrique.</i>",
+    img: ['watching_you_01.jpg', 'watching_you_02.jpg', 'watching_you_03.jpg'],
+    links: [{label: "Exgirlfriend event page", url: "https://exgirlfriendberlin.com/looseends"}]
+},
+{
+    title: 'Careful misuses of a voice',
+    loc: 'Die Stimme im Kontext, T-Werk, Brandenburg, Germany',
+    category: ['talks'],
+    tags: ['voice', 'opera', 'music'],
+    date: '02.10.2025',
+    desc: "\n<i>Hosted by Landesmusikrat Brandenburg.\nCurated by Swantje Eden.</i>\n\nTo mark the Instrument of the Year Voice, the Brandenburg State Music Council is hosting an interdisciplinary expert day at the T-Werk Potsdam : “The Voice in Context” presents diverse and different perspectives on musical work with the voice.\n\nSuzuki’s talk presents various key anecdote from his life as a vocalist: (1) his opera background and singing the Trio der Knaben as a soprano 1, soprano 2, and alto, (2) changing voice at 16 and discovering falsetto, (3) undergoing vocal cord surgery, and becoming a compulsive sampler of his own voice in the process, and finally, (4) the exploration of the rhythmicality of the Japanese language through his experimental piece Kuchibiru.",
+    img: ['stimme_01.jpg'],
+    links: [{label: "Video", url: "https://www.youtube.com/watch?v=CNXRhgavxNE&t=4560s"}]
+},
 ];
