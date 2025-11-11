@@ -243,6 +243,7 @@
     padding: 0;
     margin-bottom: 1rem;
     cursor: pointer;
+    text-decoration: underline;
     transition: opacity 0.2s;
   }
 
@@ -328,11 +329,11 @@
 
   .desc a {
     color: #FFFFFF;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   .desc a:hover {
-    text-decoration: underline;
+    opacity: 0.7;
   }
 
   .image-container {

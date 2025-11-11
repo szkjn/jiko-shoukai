@@ -16,25 +16,29 @@
 
 <style>
   * {
+    font-family: "Inter", sans-serif;
     font-size: 0.8rem;
+    line-height: 17px;
     user-select: none;
+    color: #FFFFFF;
   }
 
   footer {
-    border-top: 1px solid black;
+    border-top: 1px solid #FFFFFF;
     margin-bottom: 0;
   }
   p {
     text-align: center;
   }
   span {
-    font-family: "Averia Serif Libre", serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.8rem;
-    line-height: 1rem;
-    font-weight: 900;
+    line-height: 17px;
+    font-weight: 400;
   }
   img {
     width: 60px;
     margin: 0 auto;
+    filter: invert(1);
   }
 </style>

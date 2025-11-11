@@ -36,26 +36,28 @@
 
 <style>
   * {
-    font-family: "Libre Franklin", sans-serif;
+    font-family: "Inter", sans-serif;
     user-select: none;
+    color: #FFFFFF;
   }
 
   button {
     cursor: url("/png/cursor.png"), crosshair;
-    background: black;
+    background: transparent;
+    color: #FFFFFF;
   }
   button:hover {
-    background: white;
-    color: black;
+    opacity: 0.7;
   }
   .sticky-header {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #fff;
+    background-color: #8F8F8F;
   }
   .sign {
     height: 18px;
+    filter: invert(1);
   }
   .about,
   .back {

@@ -39,15 +39,16 @@
 <style>
   p {
     width: 45%;
-    font-family: "Averia Serif Libre", serif;
-    font-size: 0.8rem;
-    line-height: 1rem;
-    font-weight: 100;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    line-height: 17px;
+    font-weight: 400;
     user-select: text;
     text-align: justify;
+    color: #FFFFFF;
   }
   span {
-    font-weight: 900;
+    font-weight: 700;
   }
 
   @media (max-width: 760px) {
