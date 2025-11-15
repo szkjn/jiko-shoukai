@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="about-panel flex flex-col gap-8 pt-8">
+<div class="about-panel flex flex-col gap-8 pt-8 pb-12">
   <div class="flex flex-row items-start gap-8">
     <p>
       Jun Suzuki is a French-Japanese multimedia artist, developer, and former
@@ -17,8 +17,6 @@
       interactive devices, vocals, and field recordings to create a rich
       tapestry of sound that reflects his
       <span>multicultural heritage</span>.<br /><br />
-    </p>
-    <p>
       He recently published a vocals experimental EP <i>A Distance So Near</i> on XVIIIPENINSULE Records. For
       the past two years, he has been touring <i>Fluids</i>, a collaboration
       with dancer-choreographer Alvin Collantes, which explores

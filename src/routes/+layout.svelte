@@ -6,6 +6,4 @@
 </script>
 
 {@render children()}
-<div>
-  <Footer />
-</div>
+<Footer />

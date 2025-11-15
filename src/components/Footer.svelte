@@ -1,44 +1,61 @@
 <script lang="ts">
 </script>
 
-<footer class="flex flex-col align-items mt-8 mb-8 p-4">
-  <p>
-    With the kind support of<br /><br />
-    <span>
-      The Japan Foundation, Goethe Institut Budapest, <br />XVIIIPENINSULE,
-      Terenor Records, Manifest:IO, Futurehain,<br /> friends & family.</span
-    >
-    <br /><br />
-    Jun Suzuki ©2024
-  </p>
-  <img src="/png/akiraka.png" alt="Akirakani" class="pt-4" />
+<footer class="footer flex flex-row justify-between items-center">
+  <div class="flex flex-col">
+    <a href="https://junsuzuki.bandcamp.com/" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> bandcamp</a>
+    <a href="https://soundcloud.com/junsuzuki" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> soundcloud</a>
+    <a href="https://instagram.com/einleit/" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> instagram</a>
+    <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
+    <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
+  </div>
+  <p>jun suzuki ©2025</p>
 </footer>
 
 <style>
-  * {
-    font-family: "Inter", sans-serif;
-    font-size: 0.8rem;
-    line-height: 17px;
-    user-select: none;
-    color: #FFFFFF;
+  .footer {
+    width: 100%;
+    padding: 1rem;
+    background: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
   }
 
-  footer {
-    border-top: 1px solid #FFFFFF;
-    margin-bottom: 0;
+  .flex-col {
+    align-items: flex-start;
   }
-  p {
-    text-align: center;
-  }
-  span {
+
+  a, p {
     font-family: "Inter", sans-serif;
-    font-size: 0.8rem;
-    line-height: 17px;
+    user-select: none;
     font-weight: 400;
+    color: #8F8F8F;
+    margin: 0;
   }
-  img {
-    width: 60px;
-    margin: 0 auto;
-    filter: invert(1);
+
+  a {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    cursor: crosshair;
+    color: #8F8F8F;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    filter: brightness(0) saturate(100%) invert(56%) sepia(0%);
+  }
+
+  p {
+    font-size: 0.rem;
+    line-height: 1.2;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 </style>

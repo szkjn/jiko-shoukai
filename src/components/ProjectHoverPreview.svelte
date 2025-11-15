@@ -25,7 +25,7 @@
     transform: translate(-50%, -50%);
     z-index: 100;
     pointer-events: none;
-    max-width: 20vw;
+    max-width: 25vw;
     max-height: 20vh;
     display: flex;
     align-items: center;

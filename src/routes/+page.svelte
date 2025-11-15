@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
   import About from "../components/About.svelte";
+  import RightSidebar from "../components/RightSidebar.svelte";
   import ProjectHoverPreview from "../components/ProjectHoverPreview.svelte";
   import { projects } from "../data/projects";
   import type { Project } from "../types/project";
@@ -85,27 +86,36 @@
   $: previewImageUrl = getPreviewImageUrl(hoveredProject);
 </script>
 
-<div class="page-container">
-  <Header on:about-click={handleAboutClick} {isAboutVisible} />
+<div class="page-wrapper">
+  <div class="page-container">
+    <Header />
 
-  <ProjectHoverPreview 
-    imageUrl={previewImageUrl}
-    isVisible={!isAboutVisible && !selectedProject && hoveredProject !== null}
-  />
+    <ProjectHoverPreview 
+      imageUrl={previewImageUrl}
+      isVisible={!isAboutVisible && !selectedProject && hoveredProject !== null}
+    />
 
-  <main class="flex flex-row flex-no-wrap w-full {isAboutVisible ? 'invisible' : ''}">
-    <!-- Category filters - LEFT COLUMN -->
-    <div class="categories-container">
-      {#each categories as category}
+    <main class="flex flex-row flex-no-wrap w-full {isAboutVisible ? 'invisible' : ''}">
+      <!-- Category filters - LEFT COLUMN -->
+      <div class="categories-container">
+      {#if !isAboutVisible}
+        {#each categories as category}
+          <button 
+            class="category-filter" 
+            class:active={activeFilter === category}
+            on:click={() => handleCategoryClick(category)}
+          >
+          {category}
+          <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
+          </button>
+        {/each}
         <button 
-          class="category-filter" 
-          class:active={activeFilter === category}
-          on:click={() => handleCategoryClick(category)}
+          class="about-button"
+          on:click={handleAboutClick}
         >
-        {category}
-        <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
+          about
         </button>
-      {/each}
+      {/if}
     </div>
 
     <!-- Project list - RIGHT COLUMN -->
@@ -131,7 +141,7 @@
                 {#each selectedProject.links as link}
                   <br />
                   <a href={link.url} target="_blank">
-                    > {link.label}
+                    <img src="/png/arrow-up-right.png" alt="" class="arrow-icon" /> {link.label}
                   </a>
                 {/each}
               {/if}
@@ -163,10 +173,23 @@
     </div>
   </main>
 
-  <div class="right-panel {isAboutVisible ? 'visible' : ''}">
-    {#if isAboutVisible}
-      <About />
-    {/if}
+    <div class="right-panel {isAboutVisible ? 'visible' : ''}">
+      {#if isAboutVisible}
+        <div class="about-left-sidebar">
+          <button 
+            class="about-button"
+            on:click={handleAboutClick}
+          >
+            home
+          </button>
+        </div>
+        <About />
+      {/if}
+    </div>
+  </div>
+
+  <div class="right-sidebar-panel">
+    <RightSidebar />
   </div>
 </div>
 
@@ -184,13 +207,31 @@
     text-align: start;
   }
 
+  .page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #8F8F8F;
+  }
+
   .page-container {
     padding: 0 1rem;
     max-width: 1400px;
     margin: 0 auto;
+    flex: 1;
     background-color: #8F8F8F;
     color: #FFFFFF;
-    min-height: 100vh;
+  }
+
+  .right-sidebar-panel {
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    /* border-left: 1px solid #FFFFFF; */
   }
 
   main.invisible {
@@ -212,7 +253,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.2;
     user-select: none;
     background: none;
@@ -237,6 +278,34 @@
     flex-shrink: 0;
   }
 
+  .about-button {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    user-select: none;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    text-align: left;
+    margin-top: 1rem;
+    padding: 0;
+    cursor: url("/png/cursor.png"), crosshair;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .about-button:hover {
+    opacity: 0.7;
+  }
+
+  .arrow-icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    filter: invert(1);
+  }
+
   /* Projects container - RIGHT COLUMN */
   .projects-container {
     display: flex;
@@ -244,6 +313,7 @@
     gap: 0;
     flex: 1;
     padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .project-item-wrapper {
@@ -256,15 +326,18 @@
   }
 
   .back-button {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.2;
     color: #FFFFFF;
     background: none;
     border: none;
     padding: 0;
     margin-bottom: 1rem;
-    cursor: crosshair;
-    text-decoration: underline;
+    cursor: url("/png/cursor.png"), crosshair;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
     /* transition: opacity 0.2s; */
   }
 
@@ -282,7 +355,7 @@
     user-select: none;
     background: none;
     color: #FFFFFF;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.2;
     border: none;
     cursor: default;
@@ -297,8 +370,9 @@
     user-select: none;
     background: none;
     color: #FFFFFF;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.2;
+    cursor: url("/png/cursor.png"), crosshair;
     /* transition: opacity 0.2s; */
   }
 
@@ -324,7 +398,7 @@
   }
 
   .project-date {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.2;
     margin-bottom: 0.25rem;
     color: #FFFFFF;
@@ -342,16 +416,20 @@
 
   .desc {
     flex: 0 0 auto;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.4;
     color: #FFFFFF;
     max-width: 35%;
-    text-align: justify;
+    /* text-align: justify; */
   }
 
   .desc a {
     color: #FFFFFF;
-    text-decoration: underline;
+    text-decoration: none;
+    cursor: url("/png/cursor.png"), crosshair;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 
   .desc a:hover {
@@ -384,9 +462,36 @@
   .right-panel.visible {
     width: 100%;
     display: flex !important;
+    justify-content: flex-start;
+  }
+
+  .about-left-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-right: 3rem;
+    min-width: 200px;
+  }
+
+  .about-left-sidebar .about-button {
+    margin-top: 0;
   }
 
   @media (max-width: 960px) {
+    .page-wrapper {
+      flex-direction: column;
+    }
+
+    .right-sidebar-panel {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-left: none;
+      border-top: 1px solid #FFFFFF;
+      align-items: center;
+    }
+
     main {
       flex-direction: column;
     }
@@ -407,6 +512,12 @@
     }
     .right-panel.visible {
       width: 100%;
+    }
+
+    .about-left-sidebar {
+      padding-right: 0;
+      padding-top: 2rem;
+      min-width: auto;
     }
   }
 

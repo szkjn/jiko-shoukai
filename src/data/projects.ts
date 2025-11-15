@@ -9,7 +9,7 @@ export const projects: Project[] = [
     tags: ['installations', 'interactive'],
     category: ['installations'],
     img: ['i_used_to_02.jpg'],
-    links: [{ label: 'Video', url: 'https://vimeo.com/423984479' }],
+    links: [{ label: 'video', url: 'https://vimeo.com/423984479' }],
   },
   {
     title: 'Birds chirping in the background',
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     tags: ['installations', 'art'],
     category: ['installations'],
     img: ['birds_chirping_01.jpg'],
-    links: [{ label: 'Video', url: 'https://vimeo.com/424010991' }],
+    links: [{ label: 'video', url: 'https://vimeo.com/424010991' }],
 
   },
   {
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     date: '01.01.2021',
     desc: "\nLahmacun Radio's streaming website and archive.\n\nOpen-source contributor as a data engineer to extract, sanitize, compute and output listeners data and other metrics from AzuraCast API in order to monitor traffic on both the website and the app.",
     img: ['lahmacun_01.jpg'],
-    links: [{label: "Github", url: "https://github.com/lahmacunradio/analytics"}]
+    links: [{label: "github", url: "https://github.com/lahmacunradio/analytics"}]
 },
 {
     title: 'Hybrida Fest website',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     date: '12.03.2024',
     desc: "\nHybrida Fest 2024 official website, made in collaboration with Jimmy Pez.",
     img: ['hybrida_web_03.jpg', 'hybrida_web_01.jpg'],
-    links: [{label: "Website", url: "https://www.hybridafest.info/"}]
+    links: [{label: "website", url: "https://www.hybridafest.info/"}]
 },
 {
     title: 'Transverszia [Podcast Residency]',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     date: '01.01.2021',
     desc: "\nMonthly residency podacst on Lahmacun Radio.\n\nA transversal sonic journey between genres, arts and practices, that explores experimental, DIY and innovative approach to music-making \n\nOne of two episodes features guestmixes from artists encountered during residencies all over Europe. These guests bring their unique perspectives and sensitivity that transcend borders and boundaries, broadening horizons.\n\nOn air every Monday 11:11–12:11",
     img: ['tr_01.jpg'],
-    links: [{label: "Podcast", url: "https://lahmacun.hu/shows/transverszia"}]
+    links: [{label: "podcast", url: "https://lahmacun.hu/shows/transverszia"}]
 },
 {
     title: 'Life took a turn and you vanished in the white_ [Publication]',
@@ -60,8 +60,8 @@ export const projects: Project[] = [
     date: '15.09.2023',
     desc: "\n<i>Curated by Soft Eis Editorial Team.</i>\n\nIn the form of short prose extracts, below are 20 snippets of text generated with the help of AI model GPT-3, behind the (in)famous ChatGPT and considered a state-of-the-art language model at the time of writing.\n\nIn order to generate text, GPT-3 requires human input such as initial text, length of text, probability and sampling parameters, among others. To predict the next sentences, the language model looks at the provided text and calculates the probabilities of different words coming next.\n\nThis experiment is a way to explore the surface area of GPT-3’s creativity by feeding it a deliberately vague eponymous hook. I repeated the process a number of times while manipulating its “temperature” parameters from 0.1 to 2.0 to output repetitive and predictable text to complex and unusual word combinations.\n\nThe results show that, at its most creative, the AI generates text that is almost entirely incomprehensible to humans. This loss of meaning is perhaps the most fascinating aspect of this experiment. On one hand, it reveals the potential of AI to create something truly unique and alien. On the other hand, this points to the fact that Large Language Models (LLMs) such as GPT-3 rely solely on statistical methods, that is, they have no common sense whatsoever, nor understanding of what they write.\n\nStill, in some cases they can sound very realistic, and even dangerously authoritative as demonstrated by Meta’s Galactica LLM debacle supposedly designed to assist scientists and students in their research. Note that, specialists describe a language model that makes up content with high confidence as “hallucinating”.\n\nAs AI technology continues to develop and tasks such as text generation, image generation and voice generation become increasingly realistic, it is important to consider the ethical implications of these advancements. Some experts have warned that AI technology could be used for malicious purposes, such as creating fake news or deep fakes (realistic images of people doing things they have never done). Others have raised concerns about the potential biases of AI, which could lead to the reinforcement of existing discrimination and prejudice.\n\nThe ethical implications of AI are complex and far-reaching, and it is important for policymakers, technologists and the general public to be aware of these implications as we move into an increasingly AI-driven world.\n\nAre we at risk of losing something essential to our humanity ? What's the tradeoff for all the advantages AI promises ? If we rely too much on AI to replicate human behaviour, are we not surrendering our agency and responsibility for our own actions ? Are we not losing empathy and the ability to appreciate human differences ? And as AI gets better and faster at making decisions, what happens to our ability to think for ourselves?\n\nConsider this a non-academic paper raising more questions than it answers.\nConsider this an experimental study of a carefully mistreated language model.\nConsider this a short glimpse in the foreseeable future of artificially intelligent systems.\n\nReconsider now, who even wrote this abstract ?",
     img: ['life_took_a_01.jpg', 'life_took_a_02.jpg'],
-    links: [{label: "Generated text document", url: "https://docs.google.com/document/d/1mSOZ0h6TmwwudCuB1aHM-qMGBjeQqSsudnesfeyA9Bg/edit?usp=sharing"}, 
-        {label: "Buy Magazine", url: "https://www.softeismagazine.com/"}
+    links: [{label: "generated text", url: "https://docs.google.com/document/d/1mSOZ0h6TmwwudCuB1aHM-qMGBjeQqSsudnesfeyA9Bg/edit?usp=sharing"}, 
+        {label: "magazine", url: "https://www.softeismagazine.com/"}
     ]
 },
 {
@@ -73,8 +73,8 @@ export const projects: Project[] = [
     desc: "\nReleased on XVIIIPENINSULE, September 18, 2024.\n\nSaxophone on A Distance So Near by Nicolas Rode. Spoken words on Feluleikur (Part 2) by the kids from Hríseyjarskóli. Mixed and mastered by Isabel Schröer at olo mastering, Berlin, Germany. Composed, recorded and produced by Jun Suzuki at Gamli Skóli, Hrísey, Iceland. With the kind support of (strangers, friends, family &) XVIIIEMEPENINSULE.",
     img: ['adsn_01.jpg'],
     links: [
-        {label: "Bandcamp", url: "https://junsuzuki.bandcamp.com/album/a-distance-so-near"},
-        {label: "Other", url: "https://kuronekomedia.lnk.to/adsn"},
+        {label: "listen", url: "https://junsuzuki.bandcamp.com/album/a-distance-so-near"},
+        {label: "listen (other)", url: "https://kuronekomedia.lnk.to/adsn"},
     ]
 },
 {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     date: '01.10.2024',
     desc: "\nA film by Yuji & Jun Suzuki.\nImages from Yakushima Island, by Yuji Suzuki.\nWords and music from Hrìsey Island, by Jun Suzuki.\nPart of eponymous EP 'A Distance So Near' released on XVIIIEMEPENINSULE, 2024.",
     img: ['adsn_video_01.jpg'],
-    links: [{label: "Watch", url: "https://www.youtube.com/watch?v=wlwUxV-8aAY"}]
+    links: [{label: "watch", url: "https://www.youtube.com/watch?v=wlwUxV-8aAY"}]
 },
 {
     title: 'Ch​ū​to Hanpa (Feat. Egregore) [Track]',
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     desc: "\nTerenor Records presents Voix, a 14-tracks journey exploring the vast spectrum of vocal expressions. From experimental and ambient pieces to heart-felt songs, each artist of this compilation aimed at elevating vocal cords through digital transformation. There, the primal meets the processed as human and machine find their sonic point of contact.",
     img: ['chuto_01.jpg'],
     links: [
-        {label: "Bandcamp", url: "https://terenor-records.bandcamp.com/track/ch-to-hanpa"},
+        {label: "listen", url: "https://terenor-records.bandcamp.com/track/ch-to-hanpa"},
     ]
 },
 {
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     desc: "\nⓘ solidarity compilation for The City is For All (A Város Mindenkié)\n\nThe City is For All is a volunteer based grassroots organization operating in Budapest, in which homeless and non-homeless activists work together for housing rights and social justice. The organization operates as an informal advocacy group.",
     img: ['exiles_01.jpg'],
     links: [
-        {label: "Bandcamp", url: "https://exiles-electronics.bandcamp.com/track/jun-suzuki-cso-384-400"},
+        {label: "listen", url: "https://exiles-electronics.bandcamp.com/track/jun-suzuki-cso-384-400"},
     ]
 },
 {
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     desc: "\n\"We started Radiation events with the wish to experience unity and transcendence through music rituals. Inside of our cocoon we could admire the result through each and every participant over the last entrancing year.\n\nPropagation 2019 is a compilation of 10 tracks produced by artists who took part in these ceremonies. We are proud, via this sonic journey, to let the resulting energy radiate towards you.\" - Terenor Records",
     img: ['antjemina_01.jpg'],
     links: [
-        {label: "Bandcamp", url: "https://radiationmutation.bandcamp.com/track/jun-suzuki-antjemina"},
+        {label: "listen", url: "https://radiationmutation.bandcamp.com/track/jun-suzuki-antjemina"},
     ]
 },
 {
@@ -143,9 +143,9 @@ export const projects: Project[] = [
     desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
     img: ['fluids_bucht_01.jpg'],
     links: [
-        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
-        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
-        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+        {label: "watch teaser", url: "https://vimeo.com/776761734"},
+        {label: "watch full show", url: "https://vimeo.com/774674061"},
+        {label: "portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
     ]
 },
 {
@@ -157,9 +157,9 @@ export const projects: Project[] = [
     desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
     img: ['fluids_tia_01.jpg'],
     links: [
-        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
-        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
-        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+        {label: "watch teaser", url: "https://vimeo.com/776761734"},
+        {label: "watch full show", url: "https://vimeo.com/774674061"},
+        {label: "portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
     ]
 },
 {
@@ -171,9 +171,9 @@ export const projects: Project[] = [
     desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
     img: ['fluids_hybrida_01.jpg'],
     links: [
-        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
-        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
-        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+        {label: "watch teaser", url: "https://vimeo.com/776761734"},
+        {label: "watch full show", url: "https://vimeo.com/774674061"},
+        {label: "portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
     ]
 },
 {
@@ -185,9 +185,9 @@ export const projects: Project[] = [
     desc: "\n<i>Movement and sound improvisation collaboration with Alvin Collantes.</i>\n\nFluids is an intimate duet in collaboration with Jun Suzuki and Alvin Collantes exploring emotional upheavals through a close interaction of body movements and sound improvisation.\n\nInspired by their parallel childhood upbringingsin Japan & The Philippines, Jun and Alvin share the stories that were left behind, emotional landscapes of grief and the struggles in identities, belongingness & acceptance. \n\nTogether, they experiment beyond their respective boundaries to explore and stimulate the correlation between one another's sensibilities and stage an intertwined dialogue between unspoken states of body, mind and soul. \n\nMirroring emotions as fluids, continuous, variable and constantly shape-shifting.",
     img: ['fluids_hobb_01.jpg'],
     links: [
-        {label: "Video (teaser)", url: "https://vimeo.com/776761734"},
-        {label: "Video (full show)", url: "https://vimeo.com/774674061"},
-        {label: "Portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
+        {label: "watch teaser", url: "https://vimeo.com/776761734"},
+        {label: "watch full show", url: "https://vimeo.com/774674061"},
+        {label: "portfolio", url: "https://drive.google.com/file/d/17aED59UoyR8hhMyuM7JDCHqkhK9Vwuc0/view?usp=share_link"}
     ]
 },
 {
@@ -198,7 +198,7 @@ export const projects: Project[] = [
     date: '24.02.2024',
     desc: "\n<i>Audiovisual real-time generated live performance.\nIn collaboration with generative artist Nicolas Michel.\nCommisionned by Manifest:IO, Alte Münze, Berlin.</i>\n\nImagine a performance where the digital and the organic converge, creating a landscape that’s both eerily familiar and strikingly alien. This is what our first time collaboration aimed to bring to MANIFEST:IO in Alte Münze. ‘Is this not real?’ is a tapestry of AI-infused artistry, New Media savoir-faire and a deep dive into the nuances of versatile vocals, cassettes tapes and the musicality of the Japanese language. We thought this collaboration as a dialogue with the self and our current society, a reflection on where we stand in the rapidly evolving digital age, and a look into the complexities of cultural identity.",
     img: ['is_this_not_real_01.jpg'],
-    links: [{label: "Show Reel", url: "https://vimeo.com/942291398"}]
+    links: [{label: "showreel", url: "https://vimeo.com/942291398"}]
 },
 {
     title: 'Recursive Reverie',
@@ -217,7 +217,7 @@ export const projects: Project[] = [
     date: '15.04.2024',
     desc: "\n<i>Real-time AI-generated interactive sound installation.\nIn collaboration with new media artist Emilia Gentis.\nCurated by Elena Feijoo and Cathy Bijur, as part of Exgirlfriend Galerie closing event.</i>\n\nIn this installation, visitors confront the intersection of technology and self-perception, approaching a white pedestal to engage with a seemingly simple mechanism: a lone button. Suspended above, a constellation of smartphones dangles, ready to capture a photo of the subject. With a press, the installation whirs to life, capturing an image that becomes the subject of scrutiny by a trinity of AIs. These AIs analyse the image and ultimately judge the participant. Within moments, a synthesized voice, laden with the biases inherent to its programming, delivers a 30-second critique echoing through the exhibition space. Each AI persona, from an ad-targeting algorithm with motives as opaque as they are intrusive, to a surveillance entity quick to assume the worst, offers a unique, if sardonic, perspective on the human condition.\n\n<i>Observee In Situ</i> serves as a mirror reflecting the transformative power and potential perils of our digital age. It’s a reminder of the thin line between transformation and loss of self, urging visitors to ponder the perpetual cycle of reinvention in an era defined by the watchful eyes of technology.",
     img: ['observee_in_situ_02.jpg', 'observee_in_situ_03.jpg'],
-    links: [{label: "Instagram Reel", url: "https://www.instagram.com/p/C6nllI7sTSO/"}]
+    links: [{label: "video", url: "https://www.instagram.com/p/C6nllI7sTSO/"}]
 },
 {
     title: 'Observee In Situ',
@@ -236,7 +236,7 @@ export const projects: Project[] = [
     date: '15.10.2023',
     desc: "\n<i>Generative duplex sound installation.\nIn collaboration with sound artist Anastasia Zhylinskaya.\n<i>Omnidirectional geophone, contact microphones, metal rods, modular synthesizer, laptop, smartphone, speakers.</i>\n\nIn the vast halls of Flughafen Tempelhof, our project -интерference- quietly adapted to its surroundings, becoming an echo in the vastness of Berlin's history. Originally designed to capture visitors' footsteps, it transformed to invite the public into knocking on a century-old marble wall, triggering scattered real-time radio frequencies worldwide - a nod to the city's storied past.\n\nThe installation took an unexpected turn when Anastasia (my collaborator and Belarusian activist) faced visa issues, preventing her from joining us in Berlin, an ironic coincidence that reflected our theme of borders. Embracing this challenge, Anastasia set up her part of the installation on her balcony in Gdańsk, Poland. She used metal rods and contact microphones to capture the sounds of natural elements, feeding the audio signal into her modular synths and generating a 5-day stream of haunting drones and images that were sent back to the installation space in Berlin - fostering a quiet dialogue between two distant places.\n\n'интерference' thus evolved into a remote generative installation that we renamed accordingly. Each user interaction in Berlin - whether a gentle touch or a poignant knock on the wall - found its distant echo in Anastasia's stream from abroad, a reminder of how art can bridge divides and connect us across distances.",
     img: ['interference_bis_01.jpg', 'interference_bis_02.jpg'],
-    links: [{label: "Instagram Reel", url: "https://www.instagram.com/reel/C1ZSBcRrnzE/"}]
+    links: [{label: "video", url: "https://www.instagram.com/reel/C1ZSBcRrnzE/"}]
 },
 {
     title: 'I used to fall every autumn',
@@ -246,7 +246,7 @@ export const projects: Project[] = [
     tags: ['installations', 'interactive'],
     category: ['installations'],
     img: ['i_used_to_bis_01.jpg'],
-    links: [{ label: 'Video', url: 'https://vimeo.com/423984479' }],
+    links: [{ label: 'video', url: 'https://vimeo.com/423984479' }],
   },
 {
     title: 'Loop me out before i fade and turn to noise',
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     date: '06.03.2024',
     desc: "\n<i>AI-generated collage video installation.\nCommissioned by Quinzaine Stupéfiante.</i>\n\nLa Quinzaine Stupéfiante is a community event based in Marseille that has been running for the past 7 years. It offers collective discussions and education on drugs, the pleasures and risks associated with them, and toxicophobia. For this year's event, I was asked by one of the members to generate images of drug users in club toilet booths.\n\nThe experiment turned out to be quite a visual trip. The model I used (OpenAI's DallE2 from 2022, which is like ages ago in GenAI History) had trouble generating faces and hands —the most detailed parts of the human body. In this particular context, the lack of detail resonated with themes of anonymity (inherent to the prompted scenery) and fantasized reality distortion of drug users.\n\nThe second takeaway from this experiment was the recognition of certain biases and clichés. The generated images often depicted ravers with typical occidental attributes such as white/black shirts, hoodies, caps, tattoos… This highlights how AI models, by design, reflect and reinforce stereotypes. They are nothing more than a reflection of their training datasets —namely, Western internet culture.\n\nLastly, the use of Jean Philippe Rameau's <i>Les Indes Galantes</i> eponymous score in the video underscores the ironic contrast between romanticized colonial past and the stark reality of drug use, challenging the stigmatisation of drug users in Western societies.\n\n<u>Base prompt:</u> 'Photorealistic picture of ravers doing drugs in a toilet booth, detailed faces, detailed scene'\n<u>Variable additional prompts:</u> '1980s setting', '1990s setting', '2000s setting', 'Marseille', 'Berlin', etc.",
     img: ['forets_01.jpg', 'forets_02.jpg'],
-    links: [{label: "Video", url: "https://vimeo.com/951543866"}]
+    links: [{label: "video", url: "https://vimeo.com/951543866"}]
 },
 {
     title: 'i dream of a sphere without corners',
@@ -275,7 +275,7 @@ export const projects: Project[] = [
     date: '04.10.2024',
     desc: "\n<i>Live performance using real-time short-term frequencies and AI-assisted audio sequencing.</i>\n\nI dream of a sphere without corners can manifest in various forms. It's a morphing interactive apparatus. A generative soundscape. A real-time collage of radio frequencies from around the globe. Fragmented testimonies of the uprooted. Sounds that evade borders. Border-THROUGH. CROSS-border. TRANS-. PAN-. INTER-. PERI-. An ode to motion. An ode to distance and its infinite range. To the in-betweens.\n\nUsing WebSDR (Software Defined Radio) as a primary source of sound, Jun Suzuki explores the structured disorder of broadcasts, white noise and machine bleeps from around the world. These ongoing streams are channeled into interactive agents (dicy2 by Ircam) that generate additional sequences from field recordings and testimonies. The result is a constantly evolving, real-time generated, fragmented soundscape that blurs cultural boundaries, and dreams of a sphere without corners.",
     img: ['i_dream_of_a_bis_01.jpg'],
-    links: [{label: "Official website", url: "https://s2n.cashmereradio.com/programme/i-dream-of-a-sphere-without-corners"}]
+    links: [{label: "website", url: "https://s2n.cashmereradio.com/programme/i-dream-of-a-sphere-without-corners"}]
 },
 {
     title: 'i dream of a sphere without corners',
@@ -285,7 +285,7 @@ export const projects: Project[] = [
     date: '02.09.2024',
     desc: "\nLive performance using real-time short-term frequencies and AI-assisted audio sequencing.\n\nI dream of a sphere without corners can manifest in various forms. It's a morphing interactive apparatus. A generative soundscape. A real-time collage of radio frequencies from around the globe. Fragmented testimonies of the uprooted. Sounds that evade borders. Border-THROUGH. CROSS-border. TRANS-. PAN-. INTER-. PERI-. An ode to motion. An ode to distance and its infinite range. To the in-betweens.\n\nUsing WebSDR (Software Defined Radio) as a primary source of sound, Jun Suzuki explores the structured disorder of broadcasts, white noise and machine bleeps from around the world. These ongoing streams are channeled into interactive agents (dicy2 by Ircam) that generate additional sequences from field recordings and testimonies. The result is a constantly evolving, real-time generated, fragmented soundscape that blurs cultural boundaries, and dreams of a sphere without corners.",
     img: ['i_dream_of_a_01.jpg'],
-    links: [{label: "Official website", url: "https://s2n.cashmereradio.com/programme/i-dream-of-a-sphere-without-corners"}]
+    links: [{label: "website", url: "https://s2n.cashmereradio.com/programme/i-dream-of-a-sphere-without-corners"}]
 },
 {
     title: 'The Interplay of Narrative and Technique',
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     date: '24.02.2024',
     desc: "\nInvited by The Node Institute, as part of their monthly roundtable.\nFacilitated by Harshini J. Karunaratne (The Node Institute / Manifest:IO).\n\n\"Jun Suzuki and Nicolas Michel traveled from Paris and Marseille to perform at Manifest:IO Berlin, and gave a talk at the TouchDesigner Roundtable XXIX on their use of AI in their individual and collective practices before their performance. If you saw them live in Berlin, you might have caught their performance with Alte Münze's newly installed 20m LED screen. Visuals in TouchDesigner.\" - The Node Institute",
     img: ['talk_node_01.jpg'],
-    links: [{ label: 'Video', url: 'https://www.youtube.com/live/z4QmtPLhvMI?feature=shared&t=3860' }],
+    links: [{ label: 'video', url: 'https://www.youtube.com/live/z4QmtPLhvMI?feature=shared&t=3860' }],
 
 },
 {
@@ -342,7 +342,7 @@ export const projects: Project[] = [
     date: '26.01.2025',
     desc: "\n<i>Live performance in collaboration with Ninon Devis (IRCAM).</i>\n\nAs part of the Wilding AI Lab, a workshop-residency exploring creative use of AI systems with text, audio, and sound spatialization, alongside nine other fellow artists, guided by facilitators Beth Coleman, Maurice Jones, Portrait XO, and Alexandre Saunier.\n\nInitially launched at MUTEK Festival  to reopen the black boxes of generative AI, Wilding AI now lands in MONOM's 4DSOUND spaceship, as part of CTM Festival 2025.",
     img: ['wilding_ai_1.png', 'wilding_ai_3.png'],
-    links: [{label: "About the lab (CTM)", url: "https://www.ctm-festival.de/festival-2025/open-calls/wilding-ai"}]
+    links: [{label: "about the lab", url: "https://www.ctm-festival.de/festival-2025/open-calls/wilding-ai"}]
 },
 {
     title: 'Lan Ummok',
@@ -352,7 +352,7 @@ export const projects: Project[] = [
     date: '14.08.2025',
     desc: '\n<i>Lan Ummok</i> is a fictional short story that explores themes at the intersection of collective narratives, identity and creativity at the age of generative AI and Large Language Models. The story fantasizes a global experiment shaped by diverse audio contributions from all around the world, reflecting on the challenges and possibilities of collective creation in a near future.',    
     img: ['almanac_01.png'],
-    links: [{label: "About Almanac", url: "https://soundartlab.org/almanac/"}]
+    links: [{label: "about almanac", url: "https://soundartlab.org/almanac/"}]
 },
 {
     title: 'Watching you looking at everything but me',
@@ -362,7 +362,7 @@ export const projects: Project[] = [
     date: '31.05.2025',
     desc: "\n<i>Interactive video installation, in collaboration with Edda Rabold.\nCurated by Exgirlfriend + Softlaunch, as part of LOOSE ENDS 001.</i>\n\nWATCHING YOU LOOKING AT EVERYTHING BUT ME is a collaborative installation by Edda Rabold and Jun Suzuki that turns the visitor’s gaze into both subject and spectacle. Using an OAK-D camera with an integrated facial recognition system, the work captures the visitor’s eyes, crops them in rigid rectangles, and displays them across a curved wall of wide TV screens. The resulting mosaic evokes a control room, a living archive of gazes that watch and are watched in return.\n\nThe piece draws from debates around Video Surveillance Algorithmics (VSA) and thinkers such as Félix Tréguer (Technopolice, 2024) part of eponymous collective Technopolice. It reveals how algorithmic vision fragments the body and abstracts identity into data. Rabold’s wide design practice stretching from digital fabrication to material experimentation, intersects here with Suzuki’s background in real-time AI experiments to build a work where analytical AI is both the technical tool and the subject : a quiet, circular choreography of eyes that questions visibility, intimacy, and consent in the age of AI-powered surveillance systems.\n\n<i>Pictures by Pablo Manrique.</i>",
     img: ['watching_you_01.jpg', 'watching_you_02.jpg', 'watching_you_03.jpg'],
-    links: [{label: "Exgirlfriend event page", url: "https://exgirlfriendberlin.com/looseends"}]
+    links: [{label: "about the event", url: "https://exgirlfriendberlin.com/looseends"}]
 },
 {
     title: 'Careful misuses of a voice',
@@ -372,6 +372,6 @@ export const projects: Project[] = [
     date: '02.10.2025',
     desc: "\n<i>Hosted by Landesmusikrat Brandenburg.\nCurated by Swantje Eden.</i>\n\nTo mark the Instrument of the Year Voice, the Brandenburg State Music Council is hosting an interdisciplinary expert day at the T-Werk Potsdam : “The Voice in Context” presents diverse and different perspectives on musical work with the voice.\n\nSuzuki’s talk presents various key anecdote from his life as a vocalist: (1) his opera background and singing the Trio der Knaben as a soprano 1, soprano 2, and alto, (2) changing voice at 16 and discovering falsetto, (3) undergoing vocal cord surgery, and becoming a compulsive sampler of his own voice in the process, and finally, (4) the exploration of the rhythmicality of the Japanese language through his experimental piece Kuchibiru.",
     img: ['stimme_01.jpg'],
-    links: [{label: "Video", url: "https://www.youtube.com/watch?v=CNXRhgavxNE&t=4560s"}]
+    links: [{label: "video", url: "https://www.youtube.com/watch?v=CNXRhgavxNE&t=4560s"}]
 },
 ];
