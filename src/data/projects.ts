@@ -66,7 +66,7 @@ export const projects: Project[] = [
 },
 {
     title: 'A Distance So Near [EP]',
-    loc: 'XVIIIPENINSULE, Lille, France',
+    loc: 'XVIIIPENINSULE, France',
     category: ['releases'],
     tags: ['releases', 'music', 'EP'],
     date: '18.10.2024',
@@ -83,9 +83,9 @@ export const projects: Project[] = [
     category: ['releases'],
     tags: ['releases', 'music', 'video'],
     date: '01.10.2024',
-    desc: "\nA film by Yuji & Jun Suzuki.\nImages from Yakushima Island, by Yuji Suzuki.\nWords and music from Hrìsey Island, by Jun Suzuki.\nPart of EP 'A Distance So Near' released on XVIIIEMEPENINSULE, 2024.",
+    desc: "\nA film by Yuji & Jun Suzuki.\nImages from Yakushima Island, by Yuji Suzuki.\nWords and music from Hrìsey Island, by Jun Suzuki.\nPart of eponymous EP 'A Distance So Near' released on XVIIIEMEPENINSULE, 2024.",
     img: ['adsn_video_01.jpg'],
-    links: [{label: "Youtube", url: "https://www.youtube.com/watch?v=wlwUxV-8aAY"}]
+    links: [{label: "Watch", url: "https://www.youtube.com/watch?v=wlwUxV-8aAY"}]
 },
 {
     title: 'Ch​ū​to Hanpa (Feat. Egregore) [Track]',
@@ -336,7 +336,7 @@ export const projects: Project[] = [
 },
 {
     title: 'Wilding AI Lab',
-    loc: 'MONOM, CTM Festival',
+    loc: 'MONOM, CTM Festival, Berlin, Germany',
     category: ['performances'],
     tags: ['performances', 'programming', 'AI', 'LLM', 'spatial sound'],
     date: '26.01.2025',
@@ -346,7 +346,7 @@ export const projects: Project[] = [
 },
 {
     title: 'Lan Ummok',
-    loc: 'Sound Art Lab, Almanac for Struer Tracks 2025',
+    loc: 'Sound Art Lab, Almanac for Struer Tracks 2025, Denmark',
     category: ['releases'],
     tags: ['releases', 'publications', 'text', 'generative_AI'],
     date: '14.08.2025',

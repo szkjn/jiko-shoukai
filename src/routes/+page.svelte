@@ -161,13 +161,13 @@
         {/each}
       {/if}
     </div>
-
-    <div class="right-panel {isAboutVisible ? 'visible' : ''}">
-      {#if isAboutVisible}
-        <About />
-      {/if}
-    </div>
   </main>
+
+  <div class="right-panel {isAboutVisible ? 'visible' : ''}">
+    {#if isAboutVisible}
+      <About />
+    {/if}
+  </div>
 </div>
 
 <style>
@@ -205,7 +205,7 @@
     padding-top: 3rem;
     padding-right: 3rem;
     min-width: 200px;
-    transition: opacity 0.3s ease;
+    /* transition: opacity 0.3s ease; */
   }
 
   .category-filter {
@@ -218,11 +218,12 @@
     background: none;
     border: none;
     color: #FFFFFF;
-    transition: opacity 0.2s;
+    /* transition: opacity 0.2s; */
   }
 
-  .category-filter:hover {
-    opacity: 0.7;
+  /* When hovering over a specific category, dim all other categories */
+  .categories-container:has(.category-filter:hover) .category-filter:not(:hover) {
+    opacity: 0.3;
   }
 
   .category-filter.active {
@@ -247,6 +248,7 @@
 
   .project-item-wrapper {
     margin-bottom: 0;
+    line-height: 0;
   }
 
   .detail-view {
@@ -261,9 +263,9 @@
     border: none;
     padding: 0;
     margin-bottom: 1rem;
-    cursor: pointer;
+    cursor: crosshair;
     text-decoration: underline;
-    transition: opacity 0.2s;
+    /* transition: opacity 0.2s; */
   }
 
   .back-button:hover {
@@ -287,21 +289,22 @@
   }
 
   .project-header {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0;
-    width: 100%;
+    width: auto;
     padding: 0.1rem 0;
     user-select: none;
     background: none;
     color: #FFFFFF;
     font-size: 0.875rem;
     line-height: 1.2;
-    transition: opacity 0.2s;
+    /* transition: opacity 0.2s; */
   }
 
-  .project-header:hover {
-    opacity: 0.7;
+  /* When hovering over a specific item, dim all other items */
+  .projects-container:has(.project-header:hover) .project-header:not(:hover) {
+    opacity: 0.3;
   }
 
   .project-dot {

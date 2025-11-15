@@ -2,7 +2,7 @@
 </script>
 
 <div class="about-panel flex flex-col gap-8 pt-8">
-  <div class="flex flex-row items-start justify-between">
+  <div class="flex flex-row items-start gap-8">
     <p>
       Jun Suzuki is a French-Japanese multimedia artist, developer, and former
       opera singer based in Berlin and Marseille. His practice oscillates
@@ -33,23 +33,22 @@
       Merantix AI Campus, LiTE-HAUS Galerie, 90mil).
     </p>
   </div>
-  <img src="/images/banner.jpg" alt="" />
 </div>
 
 <style>
   p {
-    width: 45%;
+    width: 30%;
     font-family: "Inter", sans-serif;
     font-size: 0.9rem;
     line-height: 17px;
     font-weight: 400;
     user-select: text;
-    text-align: justify;
+    /* text-align: justify; */
     color: #FFFFFF;
   }
-  span {
+  /* span {
     font-weight: 700;
-  }
+  } */
 
   @media (max-width: 760px) {
     .about-panel > div {
