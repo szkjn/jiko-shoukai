@@ -1,12 +1,15 @@
 <script lang="ts">
   import Header from "../components/Header.svelte";
   import About from "../components/About.svelte";
+  import ProjectHoverPreview from "../components/ProjectHoverPreview.svelte";
   import { projects } from "../data/projects";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
+  import { getOptimizedImageUrl } from "../lib/imageLoader";
 
   let isAboutVisible = false;
   let selectedProject: Project | null = null;
+  let hoveredProject: Project | null = null;
 
   function handleAboutClick() {
     isAboutVisible = !isAboutVisible;
@@ -50,6 +53,13 @@
     selectedProject = null;
   };
 
+  const getPreviewImageUrl = (project: Project | null): string | null => {
+    if (project && project.img && project.img.length > 0) {
+      return getOptimizedImageUrl(project.img[0], 'thumb');
+    }
+    return null;
+  };
+
   $: visibleProjects = sortedProjects.filter(project => 
     !project.category.includes('programming')
   );
@@ -71,10 +81,17 @@
   const sortedProjects: Project[] = [...projects].sort((a, b) => {
     return parseDate(b.date).getTime() - parseDate(a.date).getTime();
   });
+
+  $: previewImageUrl = getPreviewImageUrl(hoveredProject);
 </script>
 
 <div class="page-container">
   <Header on:about-click={handleAboutClick} {isAboutVisible} />
+
+  <ProjectHoverPreview 
+    imageUrl={previewImageUrl}
+    isVisible={!isAboutVisible && !selectedProject && hoveredProject !== null}
+  />
 
   <main class="flex flex-row flex-no-wrap w-full {isAboutVisible ? 'invisible' : ''}">
     <!-- Category filters - LEFT COLUMN -->
@@ -121,7 +138,7 @@
             </div>
             <div class="image-container">
               {#each selectedProject.img as image}
-                <img src="images/{image}" alt={selectedProject.title} />
+                <img src={getOptimizedImageUrl(image, 'full')} alt={selectedProject.title} loading="lazy" />
               {/each}
             </div>
           </div>
@@ -134,6 +151,8 @@
             <button
               class="project-header"
               on:click={() => handleProjectSelect(project)}
+              on:mouseenter={() => hoveredProject = project}
+              on:mouseleave={() => hoveredProject = null}
             >
               <span class="title">{project.title}</span><span class="loc">, {project.loc}</span>
               <span class="project-dot" style="background-color: {getCategoryColor(projectCategory)}"></span>

@@ -21,15 +21,7 @@
       class="text-sm font-bold pl-2 flex flex-row gap-2 items-center"
       on:click={handleAboutClick}
     >
-      {#if isAboutVisible}<img
-          src="/png/back.png"
-          alt="jun-in-japanese"
-          class="back"
-        />back{:else}<img
-          src="/png/about.png"
-          alt="jun-in-japanese"
-          class="about"
-        />about{/if}
+      {#if isAboutVisible}back{:else}about{/if}
     </button>
   </nav>
 </header>
