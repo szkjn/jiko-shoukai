@@ -51,7 +51,7 @@
   }
 
   p {
-    font-size: 0.rem;
+    font-size: 0.55rem;
     line-height: 1.2;
   }
 
