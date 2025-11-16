@@ -15,9 +15,3 @@ export function getOptimizedImageUrl(imageName: string, size: 'thumb' | 'full' =
   // Full size with optimization
   return `${basePath}${imageName}?format=webp&quality=85`;
 }
-
-// Fallback to original image if optimization fails
-export function getImageUrl(imageName: string): string {
-  return `/images/${imageName}`;
-}
-

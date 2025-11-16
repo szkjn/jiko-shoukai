@@ -62,6 +62,13 @@ export default defineType({
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
+      name: 'videos',
+      title: 'Videos',
+      type: 'array',
+      of: [{type: 'file', options: {accept: 'video/*'}}],
+      description: 'Optional video files',
+    }),
+    defineField({
       name: 'links',
       title: 'Links',
       type: 'array',

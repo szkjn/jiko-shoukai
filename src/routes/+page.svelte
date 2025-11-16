@@ -5,7 +5,6 @@
   import ProjectHoverPreview from "../components/ProjectHoverPreview.svelte";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
-  import { getOptimizedImageUrl } from "../lib/imageLoader";
 
   // Receive data from +page.ts
   export let data;
@@ -59,13 +58,14 @@
 
   const getPreviewImageUrl = (project: Project | null): string | null => {
     if (project && project.img && project.img.length > 0) {
-      return getOptimizedImageUrl(project.img[0], 'thumb');
+      return project.img[0].thumb;
     }
     return null;
   };
 
   $: visibleProjects = sortedProjects.filter(project => 
-    !project.category.includes('programming')
+    // Hide projects that are ONLY programming, but show if it has other categories too
+    project.category.length > 1 || !project.category.includes('programming')
   );
 
   $: filteredProjects = activeFilter 
@@ -151,7 +151,7 @@
             </div>
             <div class="image-container">
               {#each selectedProject.img as image}
-                <img src={getOptimizedImageUrl(image, 'full')} alt={selectedProject.title} loading="lazy" />
+                <img src={image.full} alt={selectedProject.title} loading="lazy" />
               {/each}
             </div>
           </div>
@@ -204,7 +204,6 @@
 
   button,
   a {
-    cursor: crosshair;
     padding: 0;
     margin: 0;
     text-align: start;
@@ -291,7 +290,7 @@
     text-align: left;
     margin-top: 1rem;
     padding: 0;
-    cursor: url("/png/cursor.png"), crosshair;
+    /* cursor: url("/png/cursor.png"), crosshair; */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -336,7 +335,7 @@
     border: none;
     padding: 0;
     margin-bottom: 1rem;
-    cursor: url("/png/cursor.png"), crosshair;
+    /* cursor: url("/png/cursor.png"), crosshair; */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -361,7 +360,6 @@
     font-size: 0.9rem;
     line-height: 1.2;
     border: none;
-    cursor: default;
   }
 
   .project-header {

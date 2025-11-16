@@ -206,7 +206,7 @@ export const projects: Project[] = [
     category: ['performances'],
     tags: ['performances', 'residency', 'collaboration', 'generative_art', 'audiovisual', 'spatial_sound'],
     date: '24.02.2024',
-    desc: "\nA collaboration with visual artist Harshini J. Karunaratne.\nA-week long residency in MONOM studio, Berlin.",
+    desc: "\nA collaboration with visual artist Harshini J. Karunaratne.\nRecursive Reverie is a spatialised audiovisual performance-installation created in collaboration with Harshini J. Karunaratne and presented at MONOM’s spatial sound studio. The project explores the tension between mythological storytelling and algorithmic drift, within an immersive environment built around sound and volumetric light.\n\nOn a real-time–driven 3D LED structure, Harshini’s visuals respond directly to the spatialised sound compositions generated through the 4DSOUND engine. The system can run autonomously or be activated live through vocal interventions, creating a non-linear, evolving dramaturgy between machine and human presence.\n\nEchoing our research on AI-assisted creation, the work examines the chain of transmission between creator, artefact, and technical entity — and what is continuously replayed within that loop.",
     img: ['recursive_reverie_01.jpg', 'recursive_reverie_02.jpg']
 },
 {
@@ -293,7 +293,7 @@ export const projects: Project[] = [
     category: ['talks'],
     tags: ['talks', 'generative_AI', 'collaboration'],
     date: '24.02.2024',
-    desc: "\nInvited by The Node Institute, as part of their monthly roundtable.\nFacilitated by Harshini J. Karunaratne (The Node Institute / Manifest:IO).\n\n\"Jun Suzuki and Nicolas Michel traveled from Paris and Marseille to perform at Manifest:IO Berlin, and gave a talk at the TouchDesigner Roundtable XXIX on their use of AI in their individual and collective practices before their performance. If you saw them live in Berlin, you might have caught their performance with Alte Münze's newly installed 20m LED screen. Visuals in TouchDesigner.\" - The Node Institute",
+    desc: "\nInvited by The Node Institute, as part of their monthly roundtable.\nFacilitated by Harshini J. Karunaratne (The Node Institute / Manifest:IO).\n\n\In this talk, I shared the making-of process behind is this not real?, the audiovisual performance I created with Nicolas Michel. I spoke about training AI voice clones on my Japanese and French recordings, and how the narrative spine of the piece — my ongoing search for identity and origin — guided every technical decision. The voices in the work are not just effects; they are doubles of myself that let me explore distance, memory, and belonging through sound. Nicolas explained how he built real-time generative visuals in TouchDesigner, reacting dynamically to the audio. Together, we reflected on how narrative drives technique in our practice, and how technology becomes meaningful only when anchored in lived questions\n\n\"Jun Suzuki and Nicolas Michel traveled from Paris and Marseille to perform at Manifest:IO Berlin, and gave a talk at the TouchDesigner Roundtable XXIX on their use of AI in their individual and collective practices before their performance. If you saw them live in Berlin, you might have caught their performance with Alte Münze's newly installed 20m LED screen. Visuals in TouchDesigner.\" - The Node Institute",
     img: ['talk_node_01.jpg'],
     links: [{ label: 'video', url: 'https://www.youtube.com/live/z4QmtPLhvMI?feature=shared&t=3860' }],
 
@@ -304,7 +304,7 @@ export const projects: Project[] = [
     category: ['talks'],
     tags: ['talks', 'radio', 'generative_AI'],
     date: '04.10.2024',
-    desc: "\nInvited by Lahmacun Radio and Goethe Institut Budapest.\nFacilitated by Peter Bokor (Lahmacun Radio).",
+    desc: "\nInvited by Lahmacun Radio and Goethe Institut Budapest.\nFacilitated by Peter Bokor (Lahmacun Radio).\n\nIn the roundtable Freedom of Expression and Radio Art, I joined other guests to question how artistic speech circulates, survives, and resists control. I spoke about my work with radio signals, especially short-wave frequencies that shape both my installations, like Interference, and performances such as I dream of a sphere without corners. These signals are fragile, noisy, and technically simple, yet they carry a profound political charge. Unlike platforms that can be shut down or censored, short-wave frequencies cannot be fully stopped. They cross borders, evade digital filters, and keep open a channel where information, presence, and dissent can still travel.",
     img: ['talk_goethe_01.jpg', 'talk_goethe_02.jpg']
 },
 {
@@ -313,7 +313,7 @@ export const projects: Project[] = [
     category: ['talks'],
     tags: ['talks', 'generative_AI'],
     date: '06.06.2024',
-    desc: "\nInvited by Futurehain, as part of their quarterly event SoireeXD.\nFacilitated by Felix Rundel (Futurehain / SoireeXD).",
+    desc: "\nInvited by Futurehain, as part of their quarterly event SoireeXD.\nFacilitated by Felix Rundel (Futurehain / SoireeXD).\n\nTransversality: Travelling the In-Betweens reflects on Jun Suzuki’s approach to working across disciplines and building artistic ecosystems rather than isolated practices. The talk outlines how collaboration becomes a generative force, expanding each artist’s vocabulary and producing forms that neither could reach alone. Suzuki explores the value of connecting fields such as music, code, performance, and visual research, showing how transversality creates new languages and new questions. Central to the talk is the idea of interactive frameworks, where the bridge extends to the audience. These systems invite shared responsibility, shifting spectators into participants and turning artistic exchange into a collective space of inquiry.",
     img: ['talk_soireexd_01.jpg']
 },
 // {
@@ -322,7 +322,7 @@ export const projects: Project[] = [
 //     category: ['talks'],
 //     tags: ['talks', 'asian'],
 //     date: '19.10.2024',
-//     desc: "\nInvited by Fifth Wall Festival.\nFacilitated by Madge Reyes (Fifth Wall Festival).",
+//     desc: "This talk traces my shared research with collaborator Alvin Collantes around our Asian identities from the perspective of artists living in the Europe. Our collaboration started during a residency at APAL (Asian Performing Artists Lab) near Berlin. There, our practices of dance, singing and electronic music found a common ground in the substance that is our asian heritage.For Fifth Wall Fest in Manila, we focused on two threads. The rhythmicality of the Japanese language, and the figure of the "Japayuki whose experiences of migration and labour surface in Alvin and Ea Torrado (Daloy Dance Company)'s choreography. ",
 //     img: ['talk_daloy_01.jpg']
 // },
 {

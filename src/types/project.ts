@@ -7,7 +7,8 @@ export interface Project {
     desc: string;
     tags: string[];
     category: Category[];
-    img: string[];
+    img: { thumb: string; full: string }[];
+    videos?: string[];
     links?: { label: string; url: string }[];
   }
   
