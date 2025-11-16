@@ -3,10 +3,13 @@
   import About from "../components/About.svelte";
   import RightSidebar from "../components/RightSidebar.svelte";
   import ProjectHoverPreview from "../components/ProjectHoverPreview.svelte";
-  import { projects } from "../data/projects";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
   import { getOptimizedImageUrl } from "../lib/imageLoader";
+
+  // Receive data from +page.ts
+  export let data;
+  const projects = data.projects;
 
   let isAboutVisible = false;
   let selectedProject: Project | null = null;

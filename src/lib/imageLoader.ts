@@ -1,5 +1,10 @@
 // Utility to get optimized image paths
 export function getOptimizedImageUrl(imageName: string, size: 'thumb' | 'full' = 'full'): string {
+  // If it's already a full URL (from Sanity CDN), return as-is
+  if (imageName.startsWith('http://') || imageName.startsWith('https://')) {
+    return imageName;
+  }
+  
   const basePath = '/images/';
   
   if (size === 'thumb') {
