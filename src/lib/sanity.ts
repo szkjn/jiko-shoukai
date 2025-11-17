@@ -5,7 +5,7 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 export const client = createClient({
   projectId: '16mn5to2',
   dataset: 'production',
-  useCdn: true, // Use CDN for faster responses
+  useCdn: false, // Set to false to always get fresh data during build
   apiVersion: '2024-11-16', // Use current date for API version
 });
 

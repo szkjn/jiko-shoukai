@@ -10,6 +10,7 @@
     <img src="{base}/png/goethe-logo.png" alt="Goethe Institut" class="pt-2" />
     <img src="{base}/png/manifestio-logo.png" alt="Manifest:IO" class="pt-2" />
     <img src="{base}/png/xviiip-logo.png" alt="XVIIIPENINSULE" class="pt-2" />
+    <img src="{base}/png/futurehain-logo.webp" alt="Futurehain" class="pt-2" />
   </p>
 </div>
 
