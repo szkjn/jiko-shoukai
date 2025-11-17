@@ -5,12 +5,24 @@
 <div class="flex flex-col align-items mt-4 mb-0 p-2">
   <p>
     Supported by:<br /><br />
-    <img src="{base}/png/3am-logo.png" alt="3AM Energy" class="pt-2" />
-    <img src="{base}/png/jf-logo.png" alt="Japan Foundation" class="pt-2" />
-    <img src="{base}/png/goethe-logo.png" alt="Goethe Institut" class="pt-2" />
-    <img src="{base}/png/manifestio-logo.png" alt="Manifest:IO" class="pt-2" />
-    <img src="{base}/png/xviiip-logo.png" alt="XVIIIPENINSULE" class="pt-2" />
-    <img src="{base}/png/futurehain-logo.webp" alt="Futurehain" class="pt-2" />
+    <a href="https://www.3am-energy.com/" target="_blank" rel="noopener noreferrer">
+      <img src="{base}/png/3am-logo.png" alt="3AM Energy" class="py-2" />
+    </a>
+    <a href="https://apal.info/" target="_blank" rel="noopener noreferrer">
+      <img src="{base}/png/apal-logo.png" alt="APAL" class="py-1" />
+    </a>
+    <a href="https://www.manifestio.art/" target="_blank" rel="noopener noreferrer">
+      <img src="{base}/png/manifestio-logo.png" alt="Manifest:IO"/>
+    </a>
+    <a href="https://terenor.com/" target="_blank" rel="noopener noreferrer">
+      <img src="{base}/png/terenor-logo.png" alt="Terenor" class="py-2" />
+    </a>
+    <a href="https://futurehain.com/" target="_blank" rel="noopener noreferrer">
+      <img src="{base}/png/futurehain-logo.webp" alt="Futurehain" class="py-3 pb-2" />
+    </a>
+    <img src="{base}/png/jf-logo.png" alt="Japan Foundation" class="py-2" />
+    <img src="{base}/png/goethe-logo.png" alt="Goethe Institut" class="py-2" />
+
   </p>
 </div>
 
@@ -29,6 +41,16 @@
   }
   p {
     text-align: center;
+  }
+  a {
+    display: block;
+    border-left: 2px solid transparent;
+    padding-left: 4px;
+    margin-left: -6px;
+    transition: border-color 0.2s ease;
+  }
+  a:hover {
+    border-left-color: #FFFFFF;
   }
   img {
     width: 100%;
