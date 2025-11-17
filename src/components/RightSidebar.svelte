@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 </script>
 
-<div class="flex flex-col align-items mt-4 mb-0 p-2">
+<div class="flex flex-col align-items mt-4 mb-0 pl-2 pt-2 pb-2">
   <p>
     Supported by:<br /><br />
     <a href="https://www.3am-energy.com/" target="_blank" rel="noopener noreferrer">
@@ -38,9 +38,14 @@
   div {
     margin-bottom: 0;
     width: 100%;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   p {
-    text-align: center;
+    text-align: right;
+    width: 100%;
   }
   a {
     display: block;

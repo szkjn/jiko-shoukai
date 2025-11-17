@@ -113,14 +113,18 @@
           <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
           </button>
         {/each}
+      {/if}
+    </div>
+    {#if !isAboutVisible}
+      <div class="about-container">
         <button 
           class="about-button"
           on:click={handleAboutClick}
         >
           about
         </button>
-      {/if}
-    </div>
+      </div>
+    {/if}
 
     <!-- Project list - RIGHT COLUMN -->
     <div class="projects-container">
@@ -215,27 +219,40 @@
     display: flex;
     min-height: 100vh;
     background-color: #8F8F8F;
+    position: relative;
   }
 
   .page-container {
-    padding: 0 1rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 0 2rem 0 2rem;
     flex: 1;
     background-color: #8F8F8F;
     color: #FFFFFF;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .right-sidebar-panel {
     position: sticky;
     top: 0;
-    right: 0;
     width: 120px;
     height: 100vh;
     display: flex;
     align-items: flex-end;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
+    margin-right: 2rem;
     /* border-left: 1px solid #FFFFFF; */
+  }
+
+  @media (max-width: 960px) {
+    .right-sidebar-panel {
+      display: none;
+    }
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   main.invisible {
@@ -282,6 +299,14 @@
     flex-shrink: 0;
   }
 
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    min-width: 200px;
+  }
+
   .about-button {
     font-size: 0.9rem;
     line-height: 1.2;
@@ -290,7 +315,7 @@
     border: none;
     color: #FFFFFF;
     text-align: left;
-    margin-top: 1rem;
+    margin-top: 0;
     padding: 0;
     /* cursor: url("/png/cursor.png"), crosshair; */
     text-decoration: none;
@@ -480,17 +505,26 @@
   }
 
   @media (max-width: 960px) {
+    .page-container {
+      padding: 0 2rem 0 2rem;
+    }
+
+    .right-sidebar-panel {
+      margin-right: 2rem;
+    }
+
     .page-wrapper {
       flex-direction: column;
     }
 
     .right-sidebar-panel {
-      position: static;
-      width: 100%;
-      height: auto;
-      border-left: none;
-      border-top: 1px solid #FFFFFF;
-      align-items: center;
+      display: none;
+    }
+
+    .about-container {
+      padding-top: 2rem;
+      padding-right: 0;
+      min-width: auto;
     }
 
     main {
@@ -522,7 +556,11 @@
     }
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 680px) {
+    .page-container {
+      padding: 0 1rem 0 1rem;
+    }
+
     .categories-container {
       gap: 1rem;
     }
@@ -535,6 +573,10 @@
     .desc,
     .image-container {
       max-width: 100%;
+    }
+
+    .loc {
+      display: none;
     }
   }
 </style>

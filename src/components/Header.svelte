@@ -3,7 +3,7 @@
   export let title = "jun suzuki";
 </script>
 
-<header class="sticky-header flex justify-between items-start py-2 m-0">
+<header class="sticky-header flex justify-between items-start py-2 m-0 px-0">
   <div class="flex flex-row gap-2 items-center">
     <h1 class="text-sm font-bold">{title}</h1>
     <img src="{base}/png/jun.png" alt="jun-in-japanese" class="sign" />
@@ -22,6 +22,8 @@
     top: 0;
     z-index: 10;
     background-color: #8F8F8F;
+    width: 100%;
+    max-width: 100%;
   }
   
   .sign {

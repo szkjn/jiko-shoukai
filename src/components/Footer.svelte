@@ -16,9 +16,7 @@
 <style>
   .footer {
     width: 100%;
-    padding: 1rem;
-    background: #FFFFFF;
-    border-top: 1px solid #FFFFFF;
+    padding: 1rem 0;
   }
 
   .flex-col {
@@ -52,7 +50,7 @@
   }
 
   p {
-    font-size: 0.55rem;
+    font-size: 0.6rem;
     line-height: 1.2;
   }
 
