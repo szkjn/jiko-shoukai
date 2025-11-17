@@ -11,8 +11,12 @@ const config = {
 	adapter: adapter({
 		pages: 'dist',
 		assets: 'dist',
-		fallback: null
+		fallback: null,
+		strict: false
 		}),
+	paths: {
+		base: process.env.NODE_ENV === 'production' ? '/jiko-shoukai' : ''
+	}
 	},
   };
   

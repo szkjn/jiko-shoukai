@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   export let title = "jun suzuki";
 </script>
 
 <header class="sticky-header flex justify-between items-start py-2 m-0">
   <div class="flex flex-row gap-2 items-center">
     <h1 class="text-sm font-bold">{title}</h1>
-    <img src="/png/jun.png" alt="jun-in-japanese" class="sign" />
+    <img src="{base}/png/jun.png" alt="jun-in-japanese" class="sign" />
   </div>
 </header>
 

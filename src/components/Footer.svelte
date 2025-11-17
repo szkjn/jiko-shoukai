@@ -1,13 +1,14 @@
 <script lang="ts">
+  import { base } from '$app/paths';
 </script>
 
 <footer class="footer flex flex-row justify-between items-center">
   <div class="flex flex-col">
-    <a href="https://junsuzuki.bandcamp.com/" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> bandcamp</a>
-    <a href="https://soundcloud.com/junsuzuki" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> soundcloud</a>
-    <a href="https://instagram.com/einleit/" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> instagram</a>
-    <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
-    <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
+    <a href="https://junsuzuki.bandcamp.com/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> bandcamp</a>
+    <a href="https://soundcloud.com/junsuzuki" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> soundcloud</a>
+    <a href="https://instagram.com/einleit/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> instagram</a>
+    <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
+    <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
   </div>
   <p>jun suzuki ©2025</p>
 </footer>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import Header from "../components/Header.svelte";
   import About from "../components/About.svelte";
   import RightSidebar from "../components/RightSidebar.svelte";
@@ -143,8 +144,8 @@
                 <br />
                 {#each selectedProject.links as link}
                   <br />
-                  <a href={link.url} target="_blank">
-                    <img src="/png/arrow-up-right.png" alt="" class="arrow-icon" /> {link.label}
+                  <a href={link.url} target="_blank" style="cursor: url('{base}/png/cursor.png'), crosshair">
+                    <img src="{base}/png/arrow-up-right.png" alt="" class="arrow-icon" /> {link.label}
                   </a>
                 {/each}
               {/if}
@@ -163,6 +164,7 @@
           <div class="project-item-wrapper">
             <button
               class="project-header"
+              style="cursor: url('{base}/png/cursor.png'), crosshair"
               on:click={() => handleProjectSelect(project)}
               on:mouseenter={() => hoveredProject = project}
               on:mouseleave={() => hoveredProject = null}
@@ -373,7 +375,6 @@
     color: #FFFFFF;
     font-size: 0.9rem;
     line-height: 1.2;
-    cursor: url("/png/cursor.png"), crosshair;
     /* transition: opacity 0.2s; */
   }
 
@@ -427,7 +428,6 @@
   .desc a {
     color: #FFFFFF;
     text-decoration: none;
-    cursor: url("/png/cursor.png"), crosshair;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;

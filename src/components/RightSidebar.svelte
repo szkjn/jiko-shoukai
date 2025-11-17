@@ -1,14 +1,15 @@
 <script lang="ts">
+  import { base } from '$app/paths';
 </script>
 
 <div class="flex flex-col align-items mt-4 mb-0 p-2">
   <p>
     Supported by:<br /><br />
-    <img src="/png/3am-logo.png" alt="3AM Energy" class="pt-2" />
-    <img src="/png/jf-logo.png" alt="Japan Foundation" class="pt-2" />
-    <img src="/png/goethe-logo.png" alt="Goethe Institut" class="pt-2" />
-    <img src="/png/manifestio-logo.png" alt="Manifest:IO" class="pt-2" />
-    <img src="/png/xviiip-logo.png" alt="XVIIIPENINSULE" class="pt-2" />
+    <img src="{base}/png/3am-logo.png" alt="3AM Energy" class="pt-2" />
+    <img src="{base}/png/jf-logo.png" alt="Japan Foundation" class="pt-2" />
+    <img src="{base}/png/goethe-logo.png" alt="Goethe Institut" class="pt-2" />
+    <img src="{base}/png/manifestio-logo.png" alt="Manifest:IO" class="pt-2" />
+    <img src="{base}/png/xviiip-logo.png" alt="XVIIIPENINSULE" class="pt-2" />
   </p>
 </div>
 
