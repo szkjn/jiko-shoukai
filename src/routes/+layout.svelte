@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import "../app.css";
   import Footer from "../components/Footer.svelte";
 
@@ -11,7 +12,7 @@
     <Footer />
   </div>
   <div class="footer-image">
-    <img src="/images/banner_footer.jpg" alt="is this not real" />
+    <img src="{base}/images/banner_footer.jpg" alt="is this not real" />
     <p class="copyright-overlay">jun suzuki ©2025</p>
   </div>
 </div>
