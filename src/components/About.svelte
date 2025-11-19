@@ -38,7 +38,7 @@
     width: 30%;
     font-family: "Inter", sans-serif;
     font-size: 0.9rem;
-    line-height: 17px;
+    line-height: 1.2;
     font-weight: 400;
     user-select: text;
     /* text-align: justify; */
@@ -48,14 +48,19 @@
     font-weight: 700;
   } */
 
-  @media (max-width: 760px) {
+  @media (max-width: 960px) {
     .about-panel > div {
       flex-direction: column;
     }
     p {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 680px) {
+    p {
       font-size: 1.6rem;
-      line-height: 1.8rem;
+      line-height: 1.4;
     }
   }
 </style>

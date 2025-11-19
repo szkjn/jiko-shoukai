@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 </script>
 
-<footer class="footer flex flex-row justify-between items-center">
+<footer class="footer flex flex-row items-center">
   <div class="flex flex-col">
     <a href="https://junsuzuki.bandcamp.com/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> bandcamp</a>
     <a href="https://soundcloud.com/junsuzuki" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> soundcloud</a>
@@ -10,7 +10,7 @@
     <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
     <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
   </div>
-  <p>jun suzuki ©2025</p>
+  <p class="copyright-mobile">jun suzuki ©2025</p>
 </footer>
 
 <style>
@@ -54,7 +54,23 @@
     line-height: 1.2;
   }
 
+  .copyright-mobile {
+    display: none;
+  }
+
   a:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 680px) {
+    a {
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .arrow {
+      width: 20px;
+      height: 20px;
+    }
   }
 </style>

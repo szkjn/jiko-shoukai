@@ -90,9 +90,10 @@
   $: previewImageUrl = getPreviewImageUrl(hoveredProject);
 </script>
 
+<Header isAboutVisible={isAboutVisible} onAboutClick={handleAboutClick} />
+
 <div class="page-wrapper">
   <div class="page-container">
-    <Header />
 
     <ProjectHoverPreview 
       imageUrl={previewImageUrl}
@@ -101,30 +102,22 @@
 
     <main class="flex flex-row flex-no-wrap w-full {isAboutVisible ? 'invisible' : ''}">
       <!-- Category filters - LEFT COLUMN -->
-      <div class="categories-container">
-      {#if !isAboutVisible}
-        {#each categories as category}
-          <button 
-            class="category-filter" 
-            class:active={activeFilter === category}
-            on:click={() => handleCategoryClick(category)}
-          >
-          {category}
-          <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
-          </button>
-        {/each}
-      {/if}
-    </div>
-    {#if !isAboutVisible}
-      <div class="about-container">
-        <button 
-          class="about-button"
-          on:click={handleAboutClick}
-        >
-          about
-        </button>
+      <div class="left-column">
+        {#if !isAboutVisible}
+          <div class="categories-container">
+            {#each categories as category}
+              <button
+                class="category-filter"
+                class:active={activeFilter === category}
+                on:click={() => handleCategoryClick(category)}
+              >
+              {category}
+              <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
+              </button>
+            {/each}
+          </div>
+        {/if}
       </div>
-    {/if}
 
     <!-- Project list - RIGHT COLUMN -->
     <div class="projects-container">
@@ -173,8 +166,7 @@
               on:mouseenter={() => hoveredProject = project}
               on:mouseleave={() => hoveredProject = null}
             >
-              <span class="title">{project.title}</span><span class="loc">, {project.loc}</span>
-              <span class="project-dot" style="background-color: {getCategoryColor(projectCategory)}"></span>
+              <span class="project-text"><span class="title">{project.title}</span><span class="loc">, {project.loc}</span> <span class="project-dot" style="background-color: {getCategoryColor(projectCategory)}"></span></span>
             </button>
           </div>
         {/each}
@@ -184,14 +176,6 @@
 
     <div class="right-panel {isAboutVisible ? 'visible' : ''}">
       {#if isAboutVisible}
-        <div class="about-left-sidebar">
-          <button 
-            class="about-button"
-            on:click={handleAboutClick}
-          >
-            home
-          </button>
-        </div>
         <About />
       {/if}
     </div>
@@ -259,14 +243,22 @@
     display: none;
   }
 
+  /* Left column wrapper */
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    min-width: 200px;
+  }
+
   /* Category filters - LEFT COLUMN */
   .categories-container {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    padding-top: 3rem;
-    padding-right: 3rem;
-    min-width: 200px;
+    min-width: auto;
     /* transition: opacity 0.3s ease; */
   }
 
@@ -297,35 +289,6 @@
     height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
-  }
-
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3rem;
-    padding-right: 3rem;
-    min-width: 200px;
-  }
-
-  .about-button {
-    font-size: 0.9rem;
-    line-height: 1.2;
-    user-select: none;
-    background: none;
-    border: none;
-    color: #FFFFFF;
-    text-align: left;
-    margin-top: 0;
-    padding: 0;
-    /* cursor: url("/png/cursor.png"), crosshair; */
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .about-button:hover {
-    opacity: 0.7;
   }
 
   .arrow-icon {
@@ -408,12 +371,18 @@
     opacity: 0.3;
   }
 
+  .project-text {
+    display: inline;
+  }
+
   .project-dot {
+    display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
-    margin-left: 0.5rem;
+    margin-left: 0;
+    vertical-align: baseline;
   }
 
   .title {
@@ -491,19 +460,6 @@
     justify-content: flex-start;
   }
 
-  .about-left-sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 2rem;
-    padding-right: 3rem;
-    min-width: 200px;
-  }
-
-  .about-left-sidebar .about-button {
-    margin-top: 0;
-  }
-
   @media (max-width: 960px) {
     .page-container {
       padding: 0 2rem 0 2rem;
@@ -521,21 +477,23 @@
       display: none;
     }
 
-    .about-container {
-      padding-top: 2rem;
-      padding-right: 0;
-      min-width: auto;
-    }
-
     main {
       flex-direction: column;
     }
 
-    .categories-container {
+    .left-column {
       flex-direction: row;
-      padding-right: 0;
+      justify-content: space-between;
+      align-items: baseline;
       padding-top: 2rem;
-      min-width: auto;
+      padding-right: 0;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .categories-container {
+      flex-direction: column;
+      gap: 0.2rem;
     }
 
     .projects-container {
@@ -549,10 +507,18 @@
       width: 100%;
     }
 
-    .about-left-sidebar {
-      padding-right: 0;
-      padding-top: 2rem;
-      min-width: auto;
+    /* Disable hover effects on MD and SM screens */
+    .categories-container:has(.category-filter:hover) .category-filter:not(:hover) {
+      opacity: 1;
+    }
+
+    .projects-container:has(.project-header:hover) .project-header:not(:hover) {
+      opacity: 1;
+    }
+
+    /* Align project dots to top when text wraps */
+    .project-header {
+      align-items: flex-start;
     }
   }
 
@@ -561,8 +527,53 @@
       padding: 0 1rem 0 1rem;
     }
 
-    .categories-container {
-      gap: 1rem;
+    /* Increase font size and clickable area for mobile */
+    .project-header {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      padding: 0.5rem 0;
+    }
+
+    .category-filter {
+      font-size: 1.6rem;
+      line-height: 1rem;
+      padding: 0.3rem 0;
+    }
+
+    .project-dot {
+      width: 20px;
+      height: 20px;
+    }
+
+    .category-dot {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Increase all text elements on mobile */
+    .back-button {
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .project-header-detail {
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .project-date {
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .desc {
+      font-size: 1.6rem;
+      line-height: 1.4;
+    }
+
+    .desc a {
+      font-size: 1.6rem;
+      line-height: 1.4;
     }
 
     .project-details {
@@ -573,10 +584,6 @@
     .desc,
     .image-container {
       max-width: 100%;
-    }
-
-    .loc {
-      display: none;
     }
   }
 </style>
