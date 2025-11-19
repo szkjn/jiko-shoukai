@@ -6,7 +6,6 @@
     { name: 'Anastasia Zhylinskaya', url: 'https://www.instagram.com/a_zhylinskaya/', title: 'audiovisual artist' },
     { name: 'Daloy Dance Company', url: 'https://www.daloydancecompany.net/', title: 'dance company' },
     { name: 'Edda Rabold', url: 'https://eddarabold.com/', title: 'fine artist, industrial designer' },
-    { name: 'Egregore', url: 'https://soundcloud.com/egr3g0re', title: 'electronic producer' },
     { name: 'Emilia Gentis', url: 'https://emiliagentis.com/', title: 'new media designer' },
     { name: 'Harshini J. Karunaratne', url: 'https://harshinijk.xyz/', title: 'new media artist, curator' },
     { name: 'Nicolas Michel', url: 'https://www.milkorva.com/home-page/', title: 'visual artist, director' },
