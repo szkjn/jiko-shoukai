@@ -58,6 +58,12 @@
     margin: 0;
     user-select: none;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .footer-image:hover .copyright-overlay {
+    opacity: 1;
   }
 
   @media (max-width: 680px) {

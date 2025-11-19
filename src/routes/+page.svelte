@@ -2,7 +2,8 @@
   import { base } from '$app/paths';
   import Header from "../components/Header.svelte";
   import About from "../components/About.svelte";
-  import RightSidebar from "../components/RightSidebar.svelte";
+  import Collaborators from "../components/Collaborators.svelte";
+  import SupportedBy from "../components/SupportedBy.svelte";
   import ProjectHoverPreview from "../components/ProjectHoverPreview.svelte";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
@@ -174,15 +175,21 @@
     </div>
   </main>
 
+  <!-- Collaborators Section - shown when not in about or detail view -->
+  {#if !isAboutVisible && !selectedProject}
+    <Collaborators />
+  {/if}
+
+  <!-- Supported By Section - shown when not in about or detail view -->
+  {#if !isAboutVisible && !selectedProject}
+    <SupportedBy />
+  {/if}
+
     <div class="right-panel {isAboutVisible ? 'visible' : ''}">
       {#if isAboutVisible}
         <About />
       {/if}
     </div>
-  </div>
-
-  <div class="right-sidebar-panel">
-    <RightSidebar />
   </div>
 </div>
 
@@ -201,7 +208,6 @@
 
   .page-wrapper {
     display: flex;
-    min-height: 100vh;
     background-color: #8F8F8F;
     position: relative;
   }
@@ -213,24 +219,6 @@
     color: #FFFFFF;
     width: 100%;
     box-sizing: border-box;
-  }
-
-  .right-sidebar-panel {
-    position: sticky;
-    top: 0;
-    width: 120px;
-    height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem 0 1rem 1rem;
-    margin-right: 2rem;
-    /* border-left: 1px solid #FFFFFF; */
-  }
-
-  @media (max-width: 960px) {
-    .right-sidebar-panel {
-      display: none;
-    }
   }
 
   main {
@@ -248,7 +236,6 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding-top: 3rem;
     padding-right: 3rem;
     min-width: 200px;
   }
@@ -304,8 +291,6 @@
     flex-direction: column;
     gap: 0;
     flex: 1;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .project-item-wrapper {
@@ -465,16 +450,8 @@
       padding: 0 2rem 0 2rem;
     }
 
-    .right-sidebar-panel {
-      margin-right: 2rem;
-    }
-
     .page-wrapper {
       flex-direction: column;
-    }
-
-    .right-sidebar-panel {
-      display: none;
     }
 
     main {
@@ -485,19 +462,15 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline;
-      padding-top: 2rem;
       padding-right: 0;
       gap: 2rem;
       width: 100%;
+      margin-bottom: 2rem;
     }
 
     .categories-container {
       flex-direction: column;
       gap: 0.2rem;
-    }
-
-    .projects-container {
-      padding-top: 2rem;
     }
 
     .right-panel {
