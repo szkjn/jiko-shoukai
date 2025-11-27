@@ -1,4 +1,18 @@
 <script lang="ts">
+  let emailCopied = false;
+  const email = "idreamofasphere@pm.me";
+
+  async function copyEmailToClipboard() {
+    try {
+      await navigator.clipboard.writeText(email);
+      emailCopied = true;
+      setTimeout(() => {
+        emailCopied = false;
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  }
 </script>
 
 <div class="about-panel flex flex-col gap-8 pt-8 pb-12">
@@ -30,6 +44,15 @@
       (CTM Festival, MONOM, Flughafen Tempelhof, Alte Münze, Manifest:IO, Exgirlfriend Gallery,
       Merantix AI Campus, LiTE-HAUS Galerie, 90mil).
     </p>
+    <p>
+      Send me a postcard at <button type="button" on:click={copyEmailToClipboard} class="email-link" class:copied={emailCopied}>
+        <span class="email-text">{emailCopied ? "copiedcopiedcopiedcopie" : email}</span>
+        <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>, on <a href="https://linkedin.com/in/jun-suzuki/">linkedin</a> or <a href="https://instagram.com/einleit/">instagram</a>.
+    </p>
   </div>
 </div>
 
@@ -47,6 +70,38 @@
   /* span {
     font-weight: 700;
   } */
+
+  a {
+    text-decoration: underline;
+  }
+
+  button.email-link {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: line-through;
+    cursor: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+
+  .copy-icon {
+    opacity: 1;
+    flex-shrink: 0;
+  }
+
+  button.email-link:hover {
+    cursor: crosshair;
+  }
+
+  button.email-link.copied {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
 
   @media (max-width: 960px) {
     .about-panel > div {

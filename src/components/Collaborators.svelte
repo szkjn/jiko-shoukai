@@ -29,7 +29,7 @@
     {#each collaborators as collaborator}
       <div class="collaborator-item">
         <a href={collaborator.url} target="_blank" rel="noopener noreferrer" class="collaborator-name">
-          {collaborator.name} <span class="collaborator-title"> — {collaborator.title}</span>
+          {collaborator.name} <span class="collaborator-title"> —> {collaborator.title}</span>
         </a>
       </div>
     {/each}

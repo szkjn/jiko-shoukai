@@ -10,7 +10,7 @@
     <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
     <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
   </div>
-  <p class="copyright-mobile">jun suzuki ©2025</p>
+  <!-- <p class="copyright-mobile">jun suzuki ©2025</p> -->
 </footer>
 
 <style>

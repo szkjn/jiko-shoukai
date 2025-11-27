@@ -13,7 +13,7 @@
   </div>
   <div class="footer-image">
     <img src="{base}/images/banner_footer.jpg" alt="is this not real" />
-    <p class="copyright-overlay">jun suzuki ©2025</p>
+    <!-- <p class="copyright-overlay">jun suzuki ©2025</p> -->
   </div>
 </div>
 
