@@ -115,7 +115,6 @@
   }
 
   a.collaborator-name {
-    cursor: url('{base}/png/cursor.png'), crosshair;
     transition: opacity 0.2s;
   }
 

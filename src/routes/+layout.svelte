@@ -2,10 +2,12 @@
   import { base } from '$app/paths';
   import "../app.css";
   import Footer from "../components/Footer.svelte";
+  import CrosshairCursor from "../components/CrosshairCursor.svelte";
 
   let { children } = $props();
 </script>
 
+<CrosshairCursor />
 {@render children()}
 <div class="footer-bg">
   <div class="footer-wrapper">

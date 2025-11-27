@@ -47,7 +47,7 @@
   }
 
   .sign {
-    height: 18px;
+    height: 14px;
     filter: invert(1);
   }
 

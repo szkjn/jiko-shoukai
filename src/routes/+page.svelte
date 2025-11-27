@@ -126,7 +126,7 @@
         <!-- Details view -->
         <div class="detail-view">
           <button class="back-button" on:click={handleBackClick}>
-            &lt; back
+            ← back
           </button>
           <button class="project-header-detail">
             <span class="title">{selectedProject.title}</span><span class="loc">, {selectedProject.loc}</span>
@@ -142,7 +142,7 @@
                 <br />
                 {#each selectedProject.links as link}
                   <br />
-                  <a href={link.url} target="_blank" style="cursor: url('{base}/png/cursor.png'), crosshair">
+                  <a href={link.url} target="_blank">
                     <img src="{base}/png/arrow-up-right.png" alt="" class="arrow-icon" /> {link.label}
                   </a>
                 {/each}
@@ -162,7 +162,6 @@
           <div class="project-item-wrapper">
             <button
               class="project-header"
-              style="cursor: url('{base}/png/cursor.png'), crosshair"
               on:click={() => handleProjectSelect(project)}
               on:mouseenter={() => hoveredProject = project}
               on:mouseleave={() => hoveredProject = null}
