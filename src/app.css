@@ -22,18 +22,22 @@ a, button {
   color: #fff; /* The text color of the selected text */
 }
 
+/* Hide scrollbar for all browsers */
+html, body, * {
+  /* For Firefox */
+  scrollbar-width: none;
+  /* For IE and Edge (older versions) */
+  -ms-overflow-style: none;
+}
+
 /* For Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 8px;  /* Make scrollbar thin */
-  height: 8px; /* For horizontal scrollbar */
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #bbb; /* Classy grey color */
-  border-radius: 10px;   /* Rounded corners for a modern look */
-}
-
-::-webkit-scrollbar-track {
-  background-color: #f4f4f4; /* Light track background */
-  border-radius: 10px; /* Match thumb radius for coherence */
+/* Make all images black and white */
+img {
+  filter: grayscale(100%);
 }

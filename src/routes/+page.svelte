@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import Header from "../components/Header.svelte";
   import About from "../components/About.svelte";
@@ -15,6 +16,36 @@
   let isAboutVisible = false;
   let selectedProject: Project | null = null;
   let hoveredProject: Project | null = null;
+  let showIntro = true;
+  const introImageUrl = `${base}/images/intro_01.jpg`;
+
+  // Preload project images
+  function preloadImages() {
+    projects.forEach(project => {
+      project.img?.forEach(image => {
+        const img = new Image();
+        img.src = image.thumb;
+        // Also preload full images for better UX
+        const fullImg = new Image();
+        fullImg.src = image.full;
+      });
+    });
+  }
+
+  // Preload once the component is mounted to ensure `Image` is available
+  onMount(() => {
+    if (showIntro) {
+      preloadImages();
+    }
+  });
+
+  function handleIntroClick() {
+    showIntro = false;
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }
 
   function handleAboutClick() {
     isAboutVisible = !isAboutVisible;
@@ -110,6 +141,13 @@
 
   $: previewImageUrl = getPreviewImageUrl(hoveredProject);
 </script>
+
+<!-- Intro Screen -->
+{#if showIntro}
+  <div class="intro-screen" on:click={handleIntroClick} role="button" tabindex="0" on:keydown={(e) => e.key === 'Enter' && handleIntroClick()}>
+    <img class="intro-image" src={introImageUrl} alt="Observee in situ" />
+  </div>
+{/if}
 
 <Header isAboutVisible={isAboutVisible} onAboutClick={handleAboutClick} onHomeClick={handleHomeClick} />
 
@@ -215,6 +253,27 @@
   * {
     font-family: "Inter", sans-serif;
     font-weight: 400;
+  }
+
+  .intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    cursor: pointer;
+  }
+
+  .intro-image {
+    width: 200px;
+    max-width: 60vw;
+    height: auto;
+    display: block;
   }
 
   button,
@@ -447,13 +506,13 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-width: 45%;
+    max-width: 30%;
   }
 
   img {
     width: 100%;
     height: auto;
-    max-height: 75vh;
+    max-height: 50vh;
     object-fit: contain;
   }
 
