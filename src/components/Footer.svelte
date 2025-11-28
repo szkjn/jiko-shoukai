@@ -2,75 +2,88 @@
   import { base } from '$app/paths';
 </script>
 
-<footer class="footer flex flex-row items-center">
-  <div class="flex flex-col">
-    <a href="https://junsuzuki.bandcamp.com/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> bandcamp</a>
-    <a href="https://soundcloud.com/junsuzuki" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> soundcloud</a>
-    <a href="https://instagram.com/einleit/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> instagram</a>
-    <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
-    <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
-  </div>
-  <!-- <p class="copyright-mobile">jun suzuki ©2025</p> -->
-</footer>
+<div class="footer-bg">
+  <img src="{base}/images/banner_footer.jpg" alt="is this not real" class="footer-image" />
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://junsuzuki.bandcamp.com/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> bandcamp</a>
+      <a href="https://soundcloud.com/junsuzuki" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> soundcloud</a>
+      <a href="https://instagram.com/einleit/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> instagram</a>
+      <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
+      <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
+    </div>
+  </footer>
+</div>
 
 <style>
-  .footer {
+  .footer-bg {
     width: 100%;
-    padding: 1rem 0;
+    position: relative;
+    display: block;
   }
 
-  .flex-col {
+  .footer-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.8;
+    filter: grayscale(90%);
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem 1rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0;
   }
 
-  a, p {
+  .footer a {
     font-family: "Inter", sans-serif;
-    user-select: none;
-    font-weight: 400;
-    color: #8F8F8F;
-    margin: 0;
-  }
-
-  a {
     font-size: 0.9rem;
     line-height: 1.2;
-    cursor: crosshair;
-    color: #8F8F8F;
+    font-weight: 400;
+    color: #FFFFFF;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    cursor: crosshair;
+    user-select: none;
+    margin: 0;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
   }
 
   .arrow {
     width: 10px;
     height: 10px;
     display: inline-block;
-    filter: brightness(0) saturate(100%) invert(56%) sepia(0%);
-  }
-
-  p {
-    font-size: 0.6rem;
-    line-height: 1.2;
-  }
-
-  .copyright-mobile {
-    display: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
+    filter: brightness(0) invert(1);
   }
 
   @media (max-width: 680px) {
-    a {
-      font-size: 1.6rem;
-      line-height: 1.2;
+    .footer {
+      padding: 0 1rem 1rem 1rem;
+    }
+
+    .footer a {
+      font-size: 0.9rem;
     }
 
     .arrow {
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
     }
   }
 </style>

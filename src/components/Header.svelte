@@ -3,13 +3,14 @@
   export let title = "jun suzuki";
   export let isAboutVisible = false;
   export let onAboutClick: () => void;
+  export let onHomeClick: () => void;
 </script>
 
 <header class="sticky-header flex justify-between items-start py-2 m-0 px-0">
-  <div class="flex flex-row gap-2 items-center">
+  <button class="header-home-button" on:click={onHomeClick}>
     <h1 class="header-title font-bold">{title}</h1>
     <img src="{base}/png/jun.png" alt="jun-in-japanese" class="sign" />
-  </div>
+  </button>
 
   <div class="nav-links">
     <button
@@ -32,13 +33,28 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #8F8F8F;
+    background-color: #555;
     width: 100%;
     max-width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
     margin-bottom: 1rem;
     box-sizing: border-box;
+  }
+
+  .header-home-button {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: none;
+  }
+
+  .header-home-button:hover {
+    opacity: 0.7;
   }
 
   .header-title {

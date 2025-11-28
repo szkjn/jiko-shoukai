@@ -115,8 +115,11 @@
     height: 30px;
   }
 
-  .logos-column a:hover {
-    opacity: 0.7;
+  /* When hovering over a specific logo, dim all other logos (widescreen only) */
+  @media (min-width: 961px) {
+    .logos-column:has(a:hover) a:not(:hover) {
+      opacity: 0.3;
+    }
   }
 
   .logos-column img {

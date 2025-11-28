@@ -25,6 +25,16 @@
     });
   }
 
+  function handleHomeClick() {
+    isAboutVisible = false;
+    selectedProject = null;
+    activeFilter = null;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   function handleBackClick() {
     selectedProject = null;
   }
@@ -38,19 +48,29 @@
 
   let activeFilter: Category | null = null;
 
-  const categoryColors: Record<string, string> = {
-    installations: 'rgba(255, 146, 146, 0.7)', // FF9292
-    performances: 'rgba(171, 255, 171, 0.7)', // ABFFAB
-    releases: 'rgba(180, 190, 255, 0.7)', // B4BEFF
-    talks: 'rgba(113, 201, 255, 0.7)', // 71C9FF
+  const getCategoryStyle = (category: string): string => {
+    const styles: Record<string, string> = {
+      installations: 'background-color: #BBB; border: none;',
+      performances: 'background-color: transparent; border: 1px solid #000;',
+      releases: 'background-color: #222; border: none;',
+      talks: 'background-color: transparent; border: 1px solid #DDD;',
+    };
+    return styles[category] || 'background-color: #8F8F8F; border: none;';
   };
 
-  const getCategoryColor = (category: string): string => {
-    return categoryColors[category] || 'rgba(143, 143, 143, 0.7)';
+  const getCategoryClass = (category: string): string => {
+    return `category-dot-${category}`;
   };
 
   const handleProjectSelect = (project: Project) => {
+    const isSelecting = selectedProject !== project;
     selectedProject = selectedProject === project ? null : project;
+    if (isSelecting) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   const handleCategoryClick = (category: Category) => {
@@ -91,7 +111,7 @@
   $: previewImageUrl = getPreviewImageUrl(hoveredProject);
 </script>
 
-<Header isAboutVisible={isAboutVisible} onAboutClick={handleAboutClick} />
+<Header isAboutVisible={isAboutVisible} onAboutClick={handleAboutClick} onHomeClick={handleHomeClick} />
 
 <div class="page-wrapper">
   <div class="page-container">
@@ -113,7 +133,7 @@
                 on:click={() => handleCategoryClick(category)}
               >
               {category}
-              <span class="category-dot" style="background-color: {getCategoryColor(category)}"></span>
+              <span class="category-dot {getCategoryClass(category)}" style="{getCategoryStyle(category)}"></span>
               </button>
             {/each}
           </div>
@@ -128,10 +148,9 @@
           <button class="back-button" on:click={handleBackClick}>
             ← back
           </button>
-          <button class="project-header-detail">
-            <span class="title">{selectedProject.title}</span><span class="loc">, {selectedProject.loc}</span>
-            <span class="project-dot" style="background-color: {getCategoryColor(selectedProject.category[0])}"></span>
-          </button>
+          <div class="project-header-detail">
+            <span class="project-text"><span class="title">{selectedProject.title}</span><span class="loc">, {selectedProject.loc}</span> <span class="project-dot {getCategoryClass(selectedProject.category[0])}" style="{getCategoryStyle(selectedProject.category[0])}"></span></span>
+          </div>
           <div class="project-details">
             <div class="desc">
               <div class="project-date">{formatDateShort(selectedProject.date)}</div>
@@ -166,7 +185,7 @@
               on:mouseenter={() => hoveredProject = project}
               on:mouseleave={() => hoveredProject = null}
             >
-              <span class="project-text"><span class="title">{project.title}</span><span class="loc">, {project.loc}</span> <span class="project-dot" style="background-color: {getCategoryColor(projectCategory)}"></span></span>
+              <span class="project-text"><span class="title">{project.title}</span><span class="loc">, {project.loc}</span> <span class="project-dot {getCategoryClass(projectCategory)}" style="{getCategoryStyle(projectCategory)}"></span></span>
             </button>
           </div>
         {/each}
@@ -207,14 +226,14 @@
 
   .page-wrapper {
     display: flex;
-    background-color: #8F8F8F;
+    background-color: #555;
     position: relative;
   }
 
   .page-container {
     padding: 0 2rem 0 2rem;
     flex: 1;
-    background-color: #8F8F8F;
+    background-color: #555;
     color: #FFFFFF;
     width: 100%;
     box-sizing: border-box;
@@ -266,6 +285,11 @@
     opacity: 0.3;
   }
 
+  /* When a category is active, dim all other categories */
+  .categories-container:has(.category-filter.active) .category-filter:not(.active) {
+    opacity: 0.3;
+  }
+
   .category-filter.active {
     font-weight: 700;
   }
@@ -275,6 +299,7 @@
     height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
+    box-sizing: border-box;
   }
 
   .arrow-icon {
@@ -322,10 +347,10 @@
   }
 
   .project-header-detail {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0;
-    width: 100%;
+    width: auto;
     padding: 0.1rem 0 0.5rem 0;
     margin-bottom: 1rem;
     user-select: none;
@@ -334,6 +359,7 @@
     font-size: 0.9rem;
     line-height: 1.2;
     border: none;
+    cursor: default;
   }
 
   .project-header {
@@ -367,6 +393,7 @@
     flex-shrink: 0;
     margin-left: 0;
     vertical-align: baseline;
+    box-sizing: border-box;
   }
 
   .title {
@@ -484,12 +511,20 @@
       opacity: 1;
     }
 
+    .categories-container:has(.category-filter.active) .category-filter:not(.active) {
+      opacity: 1;
+    }
+
     .projects-container:has(.project-header:hover) .project-header:not(:hover) {
       opacity: 1;
     }
 
     /* Align project dots to top when text wraps */
     .project-header {
+      align-items: flex-start;
+    }
+
+    .project-header-detail {
       align-items: flex-start;
     }
   }
@@ -503,6 +538,10 @@
     .project-header {
       font-size: 1.6rem;
       line-height: 1.2;
+      padding: 0.5rem 0;
+    }
+
+    .project-header-detail {
       padding: 0.5rem 0;
     }
 

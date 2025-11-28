@@ -43,7 +43,7 @@
 <svelte:window onmousemove={handleMouseMove} />
 
 <div 
-  class="crosshair-container {isHoveringClickable ? 'rotate-anticlockwise' : ''}" 
+  class="crosshair-container {isHoveringClickable ? 'rotate-anticlockwise' : ''} {isHoveringLink ? 'rotate-anticlockwise-external' : ''}" 
   style="transform-origin: {mouseX}px {mouseY}px; --mouse-x: {mouseX}px; --mouse-y: {mouseY}px;"
 >
   <div 
@@ -68,6 +68,7 @@
     overflow: visible;
     transform: rotate(10deg);
     transition: transform 0.3s ease;
+    mix-blend-mode: difference;
   }
 
   @keyframes rotate-anticlockwise {
@@ -80,38 +81,47 @@
   }
 
   .crosshair-container.rotate-anticlockwise {
-    animation: rotate-anticlockwise 10s linear infinite;
+    animation: rotate-anticlockwise 5s linear infinite;
+  }
+
+  .crosshair-container.rotate-anticlockwise-external {
+    animation: rotate-anticlockwise 120s linear infinite;
   }
 
   .crosshair-vertical {
     position: absolute;
-    width: 2px;
-    height: 1rem;
-    background-color: #ffffff77;
+    width: 1px;
+    height: 1.5rem;
+    background-color: #ffffff;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    transition: height 0.2s ease, top 0.2s ease;
+    transition: top 0.01s ease, left 0.01s ease;
   }
 
   .crosshair-horizontal {
     position: absolute;
     width: 1rem;
-    height: 2px;
-    background-color: #FFFFFF77;
+    height: 4px;
+    background-color: #FFFFFF;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    transition: width 0.2s ease, left 0.2s ease;
+    /* transition: height 0.2s ease, top 0.1s ease, left 0.1s ease; */
   }
 
   .crosshair-vertical.hover-link {
     height: 200vh;
     top: calc(var(--mouse-y) - 100vh) !important;
     transform: translateX(-50%);
+    transition: height .4s ease;
+    /* transition: height 0.2s ease, top 0.2s ease, left 0.2s ease; */
   }
 
   .crosshair-horizontal.hover-link {
     width: 200vw;
     left: calc(var(--mouse-x) - 100vw) !important;
     transform: translateY(-50%);
+    transition: width .4s ease;
+
+    /* transition: width 0.2s ease, left 0.2s ease, top 0.2s ease; */
   }
 </style>
