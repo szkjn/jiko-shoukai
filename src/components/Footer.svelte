@@ -11,6 +11,7 @@
       <a href="https://instagram.com/einleit/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> instagram</a>
       <a href="https://www.youtube.com/@junsuzuki404/videos" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> youtube</a>
       <a href="https://linkedin.com/in/jun-suzuki/" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> linkedin</a>
+      <a href="https://blog.junsuzuki.xyz" target="_blank"><img src="{base}/png/arrow-up-right.png" alt="" class="arrow" /> blog</a>
     </div>
   </footer>
 </div>
