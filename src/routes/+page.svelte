@@ -17,7 +17,32 @@
   let selectedProject: Project | null = null;
   let hoveredProject: Project | null = null;
   let showIntro = true;
+  let initialized = false;
   const introImageUrl = `${base}/images/intro_01.jpg`;
+
+  function slugify(project: Project): string {
+    const titlePart = project.title
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{M}/gu, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+    const [day, month, year] = project.date.split('.');
+    return `${titlePart}-${year}-${month}-${day}`;
+  }
+
+  function syncFromHash() {
+    const hash = window.location.hash.slice(1);
+    if (!hash) {
+      selectedProject = null;
+      return;
+    }
+    const match = projects.find(p => slugify(p) === hash);
+    if (match) {
+      selectedProject = match;
+      showIntro = false;
+    }
+  }
 
   // Preload project images
   function preloadImages() {
@@ -34,10 +59,22 @@
 
   // Preload once the component is mounted to ensure `Image` is available
   onMount(() => {
+    syncFromHash();
     if (showIntro) {
       preloadImages();
     }
+    initialized = true;
+    window.addEventListener('hashchange', syncFromHash);
+    return () => window.removeEventListener('hashchange', syncFromHash);
   });
+
+  $: if (initialized && typeof window !== 'undefined') {
+    const targetHash = selectedProject ? `#${slugify(selectedProject)}` : '';
+    if (targetHash !== window.location.hash) {
+      const url = targetHash || window.location.pathname + window.location.search;
+      history.replaceState(null, '', url);
+    }
+  }
 
   function handleIntroClick() {
     showIntro = false;
