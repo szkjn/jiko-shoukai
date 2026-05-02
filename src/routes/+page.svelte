@@ -6,12 +6,28 @@
   import Collaborators from "../components/Collaborators.svelte";
   import SupportedBy from "../components/SupportedBy.svelte";
   import ProjectHoverPreview from "../components/ProjectHoverPreview.svelte";
+  import SpreadReader from "../components/SpreadReader.svelte";
   import type { Project } from "../types/project";
   import type { Category } from "../types/project";
 
   // Receive data from +page.ts
   export let data;
   const projects = data.projects;
+
+  const READERS: Record<string, string[]> = {
+    'lan-ummok-2025-08-14': [
+      'images/lan-ummok/spread-1.png',
+      'images/lan-ummok/spread-2.png',
+      'images/lan-ummok/spread-3.png',
+    ],
+  };
+
+  function getReaderPages(project: Project | null): string[] | null {
+    if (!project) return null;
+    const filenames = READERS[slugify(project)];
+    if (!filenames) return null;
+    return filenames.map(f => `${base}/${f}`);
+  }
 
   let isAboutVisible = false;
   let selectedProject: Project | null = null;
@@ -177,6 +193,7 @@
   });
 
   $: previewImageUrl = getPreviewImageUrl(hoveredProject);
+  $: readerPages = getReaderPages(selectedProject);
 </script>
 
 <!-- Intro Screen -->
@@ -248,6 +265,11 @@
               {/each}
             </div>
           </div>
+          {#if readerPages}
+            <div class="reader-section">
+              <SpreadReader pages={readerPages} title={selectedProject.title} />
+            </div>
+          {/if}
         </div>
       {:else}
         <!-- List view -->
@@ -515,6 +537,11 @@
     margin-top: 0;
     margin-bottom: 2rem;
     padding-left: 0;
+  }
+
+  .reader-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .desc {
