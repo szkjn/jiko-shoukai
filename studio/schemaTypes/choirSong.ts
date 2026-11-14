@@ -19,6 +19,19 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'choir',
+      title: 'Choir',
+      type: 'reference',
+      to: [{type: 'choir'}],
+    }),
+    defineField({
+      name: 'order',
+      title: 'Order in the song list',
+      type: 'number',
+      description: 'Lower comes first. Songs without a number go to the end, alphabetically.',
+      validation: (Rule) => Rule.min(0),
+    }),
+    defineField({
       name: 'composer',
       title: 'Composer',
       type: 'string',
@@ -43,6 +56,36 @@ export default defineType({
       description: 'Optional — when this recording was made',
     }),
     defineField({
+      name: 'bpm',
+      title: 'Tempo (bpm)',
+      type: 'number',
+      description:
+        'Click tempo the voices were recorded to. With "beats per bar", gives the app its bar numbers, beat pulse and loop.',
+      validation: (Rule) => Rule.positive(),
+    }),
+    defineField({
+      name: 'beats',
+      title: 'Beats per bar',
+      type: 'number',
+      description: 'Top number of the time signature, counted in clicks: 3 for 3/4, 4 for 4/4, 6 for 6/4.',
+      validation: (Rule) => Rule.positive().integer(),
+    }),
+    defineField({
+      name: 'offset',
+      title: 'Offset (seconds)',
+      type: 'number',
+      description: 'Seconds of audio before bar 1. Leave at 0 when the recording starts on the first beat.',
+      initialValue: 0,
+      validation: (Rule) => Rule.min(0),
+    }),
+    defineField({
+      name: 'score',
+      title: 'Score (MusicXML)',
+      type: 'file',
+      description: 'MusicXML export from MuseScore. Each staff must be named after a voice (Soprano, Alto, Ténor, Basse…).',
+      options: {accept: '.musicxml,.xml'},
+    }),
+    defineField({
       name: 'voices',
       title: 'Voices',
       type: 'array',
@@ -59,13 +102,22 @@ export default defineType({
               options: {
                 list: [
                   {title: 'Soprano', value: 'soprano'},
+                  {title: 'Mezzo', value: 'mezzo'},
                   {title: 'Alto', value: 'alto'},
                   {title: 'Tenor', value: 'tenor'},
                   {title: 'Bass', value: 'bass'},
+                  {title: 'Lead', value: 'lead'},
+                  {title: 'Lead (high)', value: 'leadHigh'},
                   {title: 'Mix', value: 'mix'},
                 ],
               },
               validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+              description: 'Optional. Name shown in the app instead of the default one for this part.',
             },
             {
               name: 'audio',
@@ -76,9 +128,9 @@ export default defineType({
             },
           ],
           preview: {
-            select: {part: 'part', filename: 'audio.asset.originalFilename'},
-            prepare: ({part, filename}) => ({
-              title: part ?? '(no part)',
+            select: {part: 'part', label: 'label', filename: 'audio.asset.originalFilename'},
+            prepare: ({part, label, filename}) => ({
+              title: label ?? part ?? '(no part)',
               subtitle: filename,
             }),
           },
@@ -88,6 +140,11 @@ export default defineType({
     }),
   ],
   orderings: [
+    {
+      title: 'Order in the song list',
+      name: 'orderAsc',
+      by: [{field: 'order', direction: 'asc'}],
+    },
     {
       title: 'Name, A→Z',
       name: 'nameAsc',
